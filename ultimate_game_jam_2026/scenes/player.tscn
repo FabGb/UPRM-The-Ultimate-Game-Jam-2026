@@ -1,12 +1,46 @@
 [gd_scene format=3 uid="uid://v4gh4tjacqmn"]
 
 [ext_resource type="Script" uid="uid://c7sk8c5llm8rf" path="res://scripts/player.gd" id="1_3vyb7"]
-[ext_resource type="Texture2D" uid="uid://bfv1xt58a38vn" path="res://assets/ab4341e25cb940339775fbb406797cd4.png" id="2_g2els"]
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_g2els"]
-radius = 6.0
+[ext_resource type="Texture2D" uid="uid://drn1yikrkndpy" path="res://assets/Walk_sp/walk1.png" id="2_smehm"]
+[ext_resource type="Texture2D" uid="uid://i0kup4gwgkqx" path="res://assets/Walk_sp/walk2.png" id="3_ur7pv"]
+[ext_resource type="Texture2D" uid="uid://osr4g0d5etcf" path="res://assets/Walk_sp/walk3.png" id="4_y4r1p"]
+[ext_resource type="Texture2D" uid="uid://cexbkgmd28fov" path="res://assets/Walk_sp/walk4.png" id="5_d2wvv"]
+[ext_resource type="Texture2D" uid="uid://cgo5tywhw6svm" path="res://assets/Walk_sp/walk5.png" id="6_3v2ag"]
+[ext_resource type="Texture2D" uid="uid://dk1fvxqtwpr0e" path="res://assets/Walk_sp/walk6.png" id="7_jej6c"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_qhqgy"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_smehm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_ur7pv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_y4r1p")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_d2wvv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_3v2ag")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_jej6c")
+}],
+"loop": true,
+"name": &"Walk_right",
+"speed": 10.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_g2els"]
+radius = 5.0990195
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_g2els"]
 size = Vector2(999.9977, 1666.6628)
@@ -14,15 +48,17 @@ size = Vector2(999.9977, 1666.6628)
 [node name="Player" type="CharacterBody2D" unique_id=578981327]
 script = ExtResource("1_3vyb7")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1678300432]
-shape = SubResource("CircleShape2D_g2els")
-
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=486181266]
+position = Vector2(0, 0.99999994)
+scale = Vector2(0.015, 0.015)
 sprite_frames = SubResource("SpriteFrames_qhqgy")
+animation = &"Walk_right"
+autoplay = "Walk_right"
+frame_progress = 0.53976166
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1752429080]
-scale = Vector2(0.014000045, 0.01800004)
-texture = ExtResource("2_g2els")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1678300432]
+position = Vector2(0, 1)
+shape = SubResource("CircleShape2D_g2els")
 
 [node name="PhoneAttackArea" type="Area2D" parent="." unique_id=613757407]
 position = Vector2(0, -9)
