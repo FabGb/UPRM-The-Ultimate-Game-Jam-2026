@@ -30,7 +30,7 @@ animations = [{
 "texture": ExtResource("7_jej6c")
 }],
 "loop": true,
-"name": &"Walk_right",
+"name": &"Walk",
 "speed": 10.0
 }, {
 "frames": [],
@@ -43,7 +43,7 @@ animations = [{
 radius = 5.0990195
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_g2els"]
-size = Vector2(999.9977, 1666.6628)
+size = Vector2(1071.4255, 1777.7737)
 
 [node name="Player" type="CharacterBody2D" unique_id=578981327]
 script = ExtResource("1_3vyb7")
@@ -52,9 +52,9 @@ script = ExtResource("1_3vyb7")
 position = Vector2(0, 0.99999994)
 scale = Vector2(0.015, 0.015)
 sprite_frames = SubResource("SpriteFrames_qhqgy")
-animation = &"Walk_right"
-autoplay = "Walk_right"
-frame_progress = 0.53976166
+animation = &"Walk"
+autoplay = "Walk"
+frame_progress = 0.76380736
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1678300432]
 position = Vector2(0, 1)
@@ -67,5 +67,5 @@ collision_layer = 2
 collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PhoneAttackArea" unique_id=1199965354]
-position = Vector2(-1.5258789e-05, 0)
+position = Vector2(-35.71436, 55.55542)
 shape = SubResource("RectangleShape2D_g2els")

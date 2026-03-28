@@ -1,20 +1,28 @@
 extends CharacterBody2D
-
-
+#--------VARIABLES--------#
 const SPEED = 90.0
 const JUMP_VELOCITY = -200.0
-@onready var attackArea = $PhoneAttackArea
 
+@onready var player_sprite = $AnimatedSprite2D
+
+@onready var attackArea = $PhoneAttackArea
 var gotPhonePowerUp = false
 var hasPhone = false
 
+
+#--------BUILT-IN FUNCTIONS--------#
 func _ready() -> void:
 	attackArea.monitoring = false
 	attackArea.visible = false
 	attackArea.get_node("CollisionShape2D").disabled = true
 
 func _physics_process(delta: float) -> void:
-	# Add the gravity.
+	movement(delta)
+
+
+#--------CUSTOM FUNCTIONS--------#
+func movement(delta):
+	 #Add the gravity.
 	if not is_on_floor():
 		velocity += get_gravity() * delta
 
@@ -55,11 +63,14 @@ func _physics_process(delta: float) -> void:
 		hasPhone = true
 		print("Changed shape")
 
-
-
-
 	move_and_slide()
+	flip_player()
 
+func flip_player():
+	if velocity.x < 0:
+		player_sprite.flip_h = true
+	elif velocity.x > 0:
+		player_sprite.flip_h = false
 
 func attack(direction: float) -> void:
 	var size = ($CollisionShape2D.shape as CircleShape2D).radius
@@ -77,3 +88,5 @@ func attack(direction: float) -> void:
 	attackArea.monitoring = false
 	attackArea.visible = false
 	attackArea.get_node("CollisionShape2D").disabled = true
+	
+#--------SIGNALS--------#
