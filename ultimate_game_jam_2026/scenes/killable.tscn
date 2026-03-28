@@ -1,0 +1,3 @@
+[gd_scene format=3 uid="uid://bb60hq4rch02s"]
+
+[node name="Killable" type="Area2D" unique_id=201793127]

@@ -2,9 +2,18 @@
 
 [ext_resource type="PackedScene" uid="uid://v4gh4tjacqmn" path="res://scenes/player.tscn" id="1_glv2v"]
 [ext_resource type="Texture2D" uid="uid://g4vt4mqeaebt" path="res://assets/Screenshot_2026-03-27_19-51-44.png" id="2_rvslj"]
+[ext_resource type="PackedScene" uid="uid://cap4sae5plgfy" path="res://scenes/phone_power_up.tscn" id="3_rarhs"]
+[ext_resource type="Script" uid="uid://bdt00oyfcaqrc" path="res://scripts/power_up.gd" id="4_vcsgt"]
+[ext_resource type="PackedScene" uid="uid://bb60hq4rch02s" path="res://scenes/killable.tscn" id="5_c01mt"]
+[ext_resource type="Script" uid="uid://c00u2jvnfqwp8" path="res://scripts/killable.gd" id="6_nxtc6"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_uwrxv"]
 distance = -1.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_c01mt"]
+size = Vector2(6, 6)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jlsqs"]
 
 [node name="Main" type="Node2D" unique_id=1637081848]
 
@@ -12,6 +21,16 @@ distance = -1.0
 position = Vector2(-181, -58)
 scale = Vector2(0.30507612, 0.509772)
 texture = ExtResource("2_rvslj")
+
+[node name="Tutorial Text" type="Node2D" parent="." unique_id=1759770357]
+
+[node name="Label" type="Label" parent="Tutorial Text" unique_id=690064761]
+offset_left = 49.0
+offset_top = -62.0
+offset_right = 212.0
+offset_bottom = -13.0
+text = "Press A to jump
+Press B or L1 to Dash"
 
 [node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1584385123]
 position = Vector2(0, 7)
@@ -27,12 +46,21 @@ scale = Vector2(1.0000001, 1)
 zoom = Vector2(9, 9)
 position_smoothing_enabled = true
 
-[node name="Tutorial Text" type="Node2D" parent="." unique_id=1759770357]
+[node name="PhonePowerUp" parent="." unique_id=1813305990 instance=ExtResource("3_rarhs")]
+position = Vector2(29, -14)
+script = ExtResource("4_vcsgt")
 
-[node name="Label" type="Label" parent="Tutorial Text" unique_id=690064761]
-offset_left = 49.0
-offset_top = -62.0
-offset_right = 212.0
-offset_bottom = -13.0
-text = "Press A to jump
-Press B or L1 to Dash"
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PhonePowerUp" unique_id=1319544814]
+shape = SubResource("RectangleShape2D_c01mt")
+
+[node name="Killable" parent="." unique_id=201793127 instance=ExtResource("5_c01mt")]
+position = Vector2(63, -24)
+collision_layer = 2
+collision_mask = 2
+script = ExtResource("6_nxtc6")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Killable" unique_id=601326879]
+shape = SubResource("RectangleShape2D_jlsqs")
+
+[connection signal="body_entered" from="PhonePowerUp" to="PhonePowerUp" method="_on_body_entered"]
+[connection signal="area_entered" from="Killable" to="Killable" method="_on_area_entered"]
