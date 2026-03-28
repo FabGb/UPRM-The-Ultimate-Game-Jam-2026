@@ -1,0 +1,38 @@
+[gd_scene format=3 uid="uid://c51thjta5truj"]
+
+[ext_resource type="PackedScene" uid="uid://v4gh4tjacqmn" path="res://scenes/player.tscn" id="1_glv2v"]
+[ext_resource type="Texture2D" uid="uid://g4vt4mqeaebt" path="res://assets/Screenshot_2026-03-27_19-51-44.png" id="2_rvslj"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_uwrxv"]
+distance = -1.0
+
+[node name="Main" type="Node2D" unique_id=1637081848]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=2032050275]
+position = Vector2(-181, -58)
+scale = Vector2(0.30507612, 0.509772)
+texture = ExtResource("2_rvslj")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1584385123]
+position = Vector2(0, 7)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=2003061952]
+shape = SubResource("WorldBoundaryShape2D_uwrxv")
+
+[node name="Player" parent="." unique_id=578981327 instance=ExtResource("1_glv2v")]
+position = Vector2(1.0000305, -15.999996)
+scale = Vector2(1.0000001, 1)
+
+[node name="Camera2D" type="Camera2D" parent="Player" unique_id=1814140498]
+zoom = Vector2(9, 9)
+position_smoothing_enabled = true
+
+[node name="Tutorial Text" type="Node2D" parent="." unique_id=1759770357]
+
+[node name="Label" type="Label" parent="Tutorial Text" unique_id=690064761]
+offset_left = 49.0
+offset_top = -62.0
+offset_right = 212.0
+offset_bottom = -13.0
+text = "Press A to jump
+Press B or L1 to Dash"
