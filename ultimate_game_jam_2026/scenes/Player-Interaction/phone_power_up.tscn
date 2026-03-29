@@ -1,5 +1,15 @@
 [gd_scene format=3 uid="uid://cap4sae5plgfy"]
 
-[node name="PowerUp" type="Area2D" unique_id=1813305990]
+[ext_resource type="Script" uid="uid://bkjjjba6tv8fu" path="res://scripts/phone_power_up.gd" id="1_7rdqo"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7rdqo"]
+
+[node name="PhonePowerUp" type="Area2D" unique_id=1813305990]
 collision_layer = 16
 collision_mask = 16
+script = ExtResource("1_7rdqo")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1188344007]
+shape = SubResource("RectangleShape2D_7rdqo")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

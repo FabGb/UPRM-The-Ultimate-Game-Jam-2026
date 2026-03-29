@@ -10,10 +10,8 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	pass
 
-#--------SIGNALS--------#
 
 func _on_body_entered(body: Node2D) -> void:
 	body.gotPhonePowerUp = true
 	queue_free()
 	print("Got Power Up")
-	pass # Replace with function body.
