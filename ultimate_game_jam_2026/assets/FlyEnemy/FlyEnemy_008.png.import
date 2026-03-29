@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cgo5tywhw6svm"
-path="res://.godot/imported/walk5.png-3c23486cd9c849d0e7930a23ee5f2ce6.ctex"
+uid="uid://5cdcigvnwv3a"
+path="res://.godot/imported/FlyEnemy_008.png-1423284af341f411aede0f1616604ae1.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Walk_sp/walk5.png"
-dest_files=["res://.godot/imported/walk5.png-3c23486cd9c849d0e7930a23ee5f2ce6.ctex"]
+source_file="res://assets/FlyEnemy/FlyEnemy_008.png"
+dest_files=["res://.godot/imported/FlyEnemy_008.png-1423284af341f411aede0f1616604ae1.ctex"]
 
 [params]
 

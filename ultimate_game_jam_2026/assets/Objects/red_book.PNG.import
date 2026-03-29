@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cexbkgmd28fov"
-path="res://.godot/imported/walk4.png-b1fa3fab9db705269d558622784618bb.ctex"
+uid="uid://cbg8aaqeh8e38"
+path="res://.godot/imported/red_book.PNG-09a41a8b5146f2a9a39caca8d54e9cd2.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Walk_sp/walk4.png"
-dest_files=["res://.godot/imported/walk4.png-b1fa3fab9db705269d558622784618bb.ctex"]
+source_file="res://assets/Objects/red_book.PNG"
+dest_files=["res://.godot/imported/red_book.PNG-09a41a8b5146f2a9a39caca8d54e9cd2.ctex"]
 
 [params]
 

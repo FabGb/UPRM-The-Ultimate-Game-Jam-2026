@@ -1,8 +1,8 @@
 extends CharacterBody2D
 
 #--------VARIABLES--------#
-var speed = 90.0
-var jumpVelocity = -200.0
+var speed = 390.0
+var jumpVelocity = -700.0
 var health = 100
 var attack = 15
 var gotPhonePowerUp = false
@@ -13,6 +13,7 @@ var iFrames = 10
 
 @onready var player_sprite = $AnimatedSprite2D
 @onready var attackArea = $AttackArea
+@onready var camera = $Camera2D
 
 #--------BUILT-IN FUNCTIONS--------#
 func _ready() -> void:
@@ -29,6 +30,7 @@ func _ready() -> void:
 func _physics_process(delta: float) -> void:
 	movement(delta)
 	powerUpCollisions()
+	camera_control()
 	
 	if iFrames > 0:
 		iFrames -= 1
@@ -42,7 +44,7 @@ func movement(delta):
 
 	 #Add the gravity.
 	if not is_on_floor():
-		velocity += get_gravity() * delta
+		velocity += (get_gravity()*2.2) * delta
 
 	# Handle jump.
 	if Input.is_action_just_pressed("ui_accept") and is_on_floor():
@@ -54,7 +56,7 @@ func movement(delta):
 	if direction:
 		velocity.x = direction * speed
 		if Input.is_action_just_pressed("Dash"):
-			velocity.x = direction * (speed * 15)
+			velocity.x = direction * (speed * 45)
 			attackArea.get_node("CollisionShape2D").disabled = false
 			timer = 10
 			iFrames = 20
@@ -62,7 +64,7 @@ func movement(delta):
 	else:
 		velocity.x = move_toward(velocity.x, 0, speed)
 		if Input.is_action_just_pressed("Dash"):
-			velocity.x = move_toward(velocity.x, 0, speed * 15)
+			velocity.x = move_toward(velocity.x, 0, speed * 45)
 
 	move_and_slide()
 	flip_player()
@@ -70,8 +72,15 @@ func movement(delta):
 func flip_player():
 	if velocity.x < 0:
 		player_sprite.flip_h = true
+		camera.offset.x = lerp(camera.offset.x,-50.0,0.05)
 	elif velocity.x > 0:
 		player_sprite.flip_h = false
+		camera.offset.x = lerp(camera.offset.x,50.0,0.05)
+
+func camera_control():
+	var cam_direction = Input.get_axis("Cam_Up","Cam_D")
+	camera.offset.y += cam_direction*5
+	camera.offset.y = clamp(camera.offset.y,-150,150)
 
 func powerUpCollisions() -> void:
 	var direction := Input.get_axis("ui_left", "ui_right")

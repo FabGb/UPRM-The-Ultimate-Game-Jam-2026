@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://bkhklqmabhrm2"]
+
+[ext_resource type="Texture2D" uid="uid://b4aayd0ihap8e" path="res://assets/Objects/router.PNG" id="1_nr8of"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_aekry"]
+size = Vector2(142, 101)
+
+[node name="Router" type="Area2D" unique_id=2080919676]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1152806559]
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("1_nr8of")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=957765157]
+position = Vector2(1, 0.5)
+scale = Vector2(1.5, 1.5)
+shape = SubResource("RectangleShape2D_aekry")
