@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://paw8w83sck8j"]
+
+[ext_resource type="Script" uid="uid://djioqpc6br6v" path="res://scripts/ground_enemy.gd" id="1_y68h0"]
+[ext_resource type="PackedScene" uid="uid://bb60hq4rch02s" path="res://scenes/killable.tscn" id="2_18ibk"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g2brh"]
+size = Vector2(5.625, 5.625)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_y68h0"]
+size = Vector2(5.625, 5.625)
+
+[node name="GroundEnemy" type="CharacterBody2D" unique_id=1661958844]
+collision_layer = 2
+script = ExtResource("1_y68h0")
+
+[node name="Killable" parent="." unique_id=201793127 instance=ExtResource("2_18ibk")]
+collision_layer = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Killable" unique_id=823219320]
+shape = SubResource("RectangleShape2D_g2brh")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=578774078]
+shape = SubResource("RectangleShape2D_y68h0")
+
+[connection signal="area_entered" from="Killable" to="." method="_on_killable_area_entered"]
+[connection signal="body_entered" from="Killable" to="." method="_on_killable_body_entered"]

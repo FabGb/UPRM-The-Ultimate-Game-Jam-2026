@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://c1afsbqgxbie4"]
+
+[ext_resource type="Script" uid="uid://dbihk3p2ieqi" path="res://scripts/flying_enemy.gd" id="1_fgwew"]
+[ext_resource type="PackedScene" uid="uid://bb60hq4rch02s" path="res://scenes/killable.tscn" id="1_vbcm2"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fgwew"]
+size = Vector2(5.25, 5.25)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_c4a5w"]
+size = Vector2(4.5, 4.5)
+
+[node name="FlyingEnemy" type="CharacterBody2D" unique_id=834859223]
+collision_layer = 2
+script = ExtResource("1_fgwew")
+
+[node name="Killable" parent="." unique_id=201793127 instance=ExtResource("1_vbcm2")]
+collision_layer = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Killable" unique_id=416438406]
+shape = SubResource("RectangleShape2D_fgwew")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1629217984]
+shape = SubResource("RectangleShape2D_c4a5w")
+
+[connection signal="area_entered" from="Killable" to="." method="_on_killable_area_entered"]
+[connection signal="body_entered" from="Killable" to="." method="_on_killable_body_entered"]

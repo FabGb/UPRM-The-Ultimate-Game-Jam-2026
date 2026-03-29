@@ -46,6 +46,8 @@ radius = 5.0990195
 size = Vector2(1071.4255, 1777.7737)
 
 [node name="Player" type="CharacterBody2D" unique_id=578981327]
+collision_layer = 128
+collision_mask = 17
 script = ExtResource("1_3vyb7")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=486181266]
@@ -60,12 +62,10 @@ frame_progress = 0.76380736
 position = Vector2(0, 1)
 shape = SubResource("CircleShape2D_g2els")
 
-[node name="PhoneAttackArea" type="Area2D" parent="." unique_id=613757407]
-position = Vector2(0, -9)
+[node name="AttackArea" type="Area2D" parent="." unique_id=613757407]
 scale = Vector2(0.014000045, 0.01800004)
-collision_layer = 2
 collision_mask = 2
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="PhoneAttackArea" unique_id=1199965354]
-position = Vector2(-35.71436, 55.55542)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AttackArea" unique_id=1199965354]
+position = Vector2(0, -1.1444092e-05)
 shape = SubResource("RectangleShape2D_g2els")

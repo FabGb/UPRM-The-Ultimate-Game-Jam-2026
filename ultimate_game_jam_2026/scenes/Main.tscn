@@ -2,11 +2,13 @@
 
 [ext_resource type="Texture2D" uid="uid://g4vt4mqeaebt" path="res://assets/Screenshot_2026-03-27_19-51-44.png" id="1_c01mt"]
 [ext_resource type="PackedScene" uid="uid://v4gh4tjacqmn" path="res://scenes/player.tscn" id="1_glv2v"]
-[ext_resource type="PackedScene" uid="uid://b5kqvxcdbeep1" path="res://level_1.tscn" id="2_nxtc6"]
+[ext_resource type="PackedScene" uid="uid://b5kqvxcdbeep1" path="res://scenes/level_1.tscn" id="2_nxtc6"]
 [ext_resource type="PackedScene" uid="uid://cap4sae5plgfy" path="res://scenes/phone_power_up.tscn" id="3_rarhs"]
 [ext_resource type="Script" uid="uid://bdt00oyfcaqrc" path="res://scripts/power_up.gd" id="4_vcsgt"]
 [ext_resource type="PackedScene" uid="uid://bb60hq4rch02s" path="res://scenes/killable.tscn" id="5_c01mt"]
 [ext_resource type="Script" uid="uid://c00u2jvnfqwp8" path="res://scripts/killable.gd" id="6_nxtc6"]
+[ext_resource type="PackedScene" uid="uid://paw8w83sck8j" path="res://scenes/groundEnemy.tscn" id="8_jlsqs"]
+[ext_resource type="PackedScene" uid="uid://c1afsbqgxbie4" path="res://scenes/flying_enemy.tscn" id="9_q8u5g"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_c01mt"]
 size = Vector2(6, 6)
@@ -23,6 +25,7 @@ texture = ExtResource("1_c01mt")
 [node name="Player" parent="." unique_id=578981327 instance=ExtResource("1_glv2v")]
 position = Vector2(1.0000305, -15.999996)
 scale = Vector2(1.0000001, 1)
+collision_layer = 17
 
 [node name="Camera2D" type="Camera2D" parent="Player" unique_id=1814140498]
 zoom = Vector2(6, 6)
@@ -46,6 +49,12 @@ shape = SubResource("RectangleShape2D_jlsqs")
 
 [node name="Level-1" parent="." unique_id=1662869028 instance=ExtResource("2_nxtc6")]
 position = Vector2(-26, 1)
+
+[node name="CharacterBody2D" parent="." unique_id=1661958844 instance=ExtResource("8_jlsqs")]
+position = Vector2(87, -32)
+
+[node name="FlyingEnemy" parent="." unique_id=834859223 instance=ExtResource("9_q8u5g")]
+position = Vector2(156, -33)
 
 [connection signal="body_entered" from="PhonePowerUp" to="PhonePowerUp" method="_on_body_entered"]
 [connection signal="area_entered" from="Killable" to="Killable" method="_on_area_entered"]
