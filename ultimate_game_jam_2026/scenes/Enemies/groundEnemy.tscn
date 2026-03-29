@@ -1,7 +1,8 @@
 [gd_scene format=3 uid="uid://paw8w83sck8j"]
 
 [ext_resource type="Script" uid="uid://djioqpc6br6v" path="res://scripts/ground_enemy.gd" id="1_y68h0"]
-[ext_resource type="PackedScene" uid="uid://bb60hq4rch02s" path="res://scenes/killable.tscn" id="2_18ibk"]
+[ext_resource type="PackedScene" uid="uid://bb60hq4rch02s" path="res://scenes/Enemies/killable.tscn" id="2_18ibk"]
+[ext_resource type="Texture2D" uid="uid://bfv1xt58a38vn" path="res://assets/ab4341e25cb940339775fbb406797cd4.png" id="2_vpsmb"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_g2brh"]
 size = Vector2(5.625, 5.625)
@@ -12,6 +13,11 @@ size = Vector2(5.625, 5.625)
 [node name="GroundEnemy" type="CharacterBody2D" unique_id=1661958844]
 collision_layer = 2
 script = ExtResource("1_y68h0")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1441174316]
+position = Vector2(0, -8.940697e-08)
+scale = Vector2(0.010500003, 0.009999997)
+texture = ExtResource("2_vpsmb")
 
 [node name="Killable" parent="." unique_id=201793127 instance=ExtResource("2_18ibk")]
 collision_layer = 2
