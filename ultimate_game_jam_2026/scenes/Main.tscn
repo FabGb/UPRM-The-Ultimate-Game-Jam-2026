@@ -3,22 +3,14 @@
 [ext_resource type="Texture2D" uid="uid://g4vt4mqeaebt" path="res://assets/Screenshot_2026-03-27_19-51-44.png" id="1_c01mt"]
 [ext_resource type="PackedScene" uid="uid://v4gh4tjacqmn" path="res://scenes/Player-Interaction/player.tscn" id="1_glv2v"]
 [ext_resource type="PackedScene" uid="uid://b5kqvxcdbeep1" path="res://scenes/Levels/level_1.tscn" id="2_nxtc6"]
-[ext_resource type="PackedScene" uid="uid://cap4sae5plgfy" path="res://scenes/Player-Interaction/phone_power_up.tscn" id="3_rarhs"]
-[ext_resource type="Script" uid="uid://bdt00oyfcaqrc" path="res://scripts/power_up.gd" id="4_vcsgt"]
-[ext_resource type="PackedScene" uid="uid://bb60hq4rch02s" path="res://scenes/Enemies/killable.tscn" id="5_c01mt"]
-[ext_resource type="Script" uid="uid://c00u2jvnfqwp8" path="res://scripts/killable.gd" id="6_nxtc6"]
+[ext_resource type="PackedScene" uid="uid://bca6blvcy3qg" path="res://scenes/Player-Interaction/car_power_up.tscn" id="6_c01mt"]
 [ext_resource type="PackedScene" uid="uid://paw8w83sck8j" path="res://scenes/Enemies/groundEnemy.tscn" id="8_jlsqs"]
 [ext_resource type="PackedScene" uid="uid://c1afsbqgxbie4" path="res://scenes/Enemies/flying_enemy.tscn" id="9_q8u5g"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_c01mt"]
-size = Vector2(6, 6)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_jlsqs"]
 
 [node name="Main" type="Node2D" unique_id=1637081848]
 
 [node name="Background" type="Sprite2D" parent="." unique_id=615978621]
-position = Vector2(2607.4998, -1751)
+position = Vector2(2712, -1738.9999)
 scale = Vector2(7.6375637, 6.703583)
 texture = ExtResource("1_c01mt")
 
@@ -31,30 +23,14 @@ collision_layer = 17
 zoom = Vector2(6, 6)
 position_smoothing_enabled = true
 
-[node name="PhonePowerUp" parent="." unique_id=1813305990 instance=ExtResource("3_rarhs")]
-position = Vector2(29, -14)
-script = ExtResource("4_vcsgt")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="PhonePowerUp" unique_id=1319544814]
-shape = SubResource("RectangleShape2D_c01mt")
-
-[node name="Killable" parent="." unique_id=201793127 instance=ExtResource("5_c01mt")]
-position = Vector2(63, -24)
-collision_layer = 2
-collision_mask = 2
-script = ExtResource("6_nxtc6")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Killable" unique_id=601326879]
-shape = SubResource("RectangleShape2D_jlsqs")
-
 [node name="Level-1" parent="." unique_id=1662869028 instance=ExtResource("2_nxtc6")]
 position = Vector2(-26, 1)
 
 [node name="CharacterBody2D" parent="." unique_id=1661958844 instance=ExtResource("8_jlsqs")]
-position = Vector2(87, -32)
+position = Vector2(440, -146)
 
 [node name="FlyingEnemy" parent="." unique_id=834859223 instance=ExtResource("9_q8u5g")]
-position = Vector2(156, -33)
+position = Vector2(469, -112)
 
-[connection signal="body_entered" from="PhonePowerUp" to="PhonePowerUp" method="_on_body_entered"]
-[connection signal="area_entered" from="Killable" to="Killable" method="_on_area_entered"]
+[node name="CarPowerUp" parent="." unique_id=1647981530 instance=ExtResource("6_c01mt")]
+position = Vector2(59, -24)
