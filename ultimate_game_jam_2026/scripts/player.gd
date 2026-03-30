@@ -23,7 +23,7 @@ var force = Vector2(3, 3)
 
 var isDashing = false
 var dashTime = 0
-var dashSpeed = 2 * speed
+var dashSpeed = 2.7 * speed
 var dashDir = 0
 
 @onready var player_sprite = $AnimatedSprite2D
@@ -140,10 +140,10 @@ func flip_player():
 	
 	if velocity.x < 0:
 		player_sprite.flip_h = true
-		camera.offset.x = lerp(camera.offset.x,-50.0,0.05)
+		camera.offset.x = lerp(camera.offset.x,-45.0,0.05)
 	elif velocity.x > 0:
 		player_sprite.flip_h = false
-		camera.offset.x = lerp(camera.offset.x,50.0,0.05)
+		camera.offset.x = lerp(camera.offset.x,45.0,0.05)
 
 func camera_control():
 	var cam_direction = Input.get_axis("Cam_Up","Cam_D")
