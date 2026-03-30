@@ -1,6 +1,6 @@
 extends Control
 
-const levelScene = "res://scenes/Main.tscn"
+const levelScene = "res://scenes/Levels/Tutorial.tscn"
 var change_scene = preload(levelScene)
 
 
