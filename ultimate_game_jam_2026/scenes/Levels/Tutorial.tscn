@@ -30,6 +30,10 @@ font_color = Color(0, 0, 0, 1)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wco3g"]
 size = Vector2(20, 21)
 
+[sub_resource type="LabelSettings" id="LabelSettings_wco3g"]
+font_size = 50
+font_color = Color(0.105643965, 0.06989858, 0.018451989, 1)
+
 [node name="Tutorial" type="Node2D" unique_id=1675367804]
 
 [node name="Background" type="Sprite2D" parent="." unique_id=1144685297]

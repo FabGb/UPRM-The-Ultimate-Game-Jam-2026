@@ -1,0 +1,263 @@
+[gd_scene format=3 uid="uid://dnuk61q6koum8"]
+
+[ext_resource type="Texture2D" uid="uid://brunnkgsuq5jx" path="res://assets/Backgrounds/green_wallpaper.PNG" id="1_u25fl"]
+[ext_resource type="PackedScene" uid="uid://v4gh4tjacqmn" path="res://scenes/Player-Interaction/player.tscn" id="2_7pnuw"]
+[ext_resource type="PackedScene" uid="uid://cybc1nakgp71v" path="res://scenes/Player-Interaction/couch.tscn" id="2_52tvu"]
+[ext_resource type="PackedScene" uid="uid://c75i2j3wb1peg" path="res://scenes/Player-Interaction/shelf.tscn" id="3_hqt8u"]
+[ext_resource type="PackedScene" uid="uid://w1h245pqx0gx" path="res://scenes/Player-Interaction/power_outlet.tscn" id="4_h2cbv"]
+[ext_resource type="PackedScene" uid="uid://c45d1jfsqvpmh" path="res://scenes/Player-Interaction/window.tscn" id="5_euhem"]
+[ext_resource type="PackedScene" uid="uid://cgmdrny0vnmt3" path="res://scenes/Player-Interaction/blue_book.tscn" id="5_wqrpq"]
+[ext_resource type="PackedScene" uid="uid://enfst5441bwv" path="res://scenes/Player-Interaction/red_book.tscn" id="6_r15cd"]
+[ext_resource type="PackedScene" uid="uid://bkhklqmabhrm2" path="res://scenes/Player-Interaction/router.tscn" id="7_r15cd"]
+[ext_resource type="PackedScene" uid="uid://cs1kg7l7g0kfn" path="res://scenes/Player-Interaction/side_table.tscn" id="8_pvfsd"]
+[ext_resource type="PackedScene" uid="uid://c1afsbqgxbie4" path="res://scenes/Enemies/flying_enemy.tscn" id="9_r4pos"]
+[ext_resource type="PackedScene" uid="uid://bxlgmoiwuwfbg" path="res://scenes/Player-Interaction/area_2d.tscn" id="12_idx6k"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_v54kn"]
+load_path = "res://.godot/imported/Floor.png-1986a68a011c9d9847f815defae65829.ctex"
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_52tvu"]
+texture = SubResource("CompressedTexture2D_v54kn")
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+
+[sub_resource type="TileSet" id="TileSet_hqt8u"]
+physics_layer_0/collision_layer = 1
+sources/0 = SubResource("TileSetAtlasSource_52tvu")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7pnuw"]
+
+[node name="Level_3" type="Node2D" unique_id=552326848]
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1819351614]
+offset_right = 1280.0
+offset_bottom = 720.0
+scale = Vector2(3.5, 5)
+texture = ExtResource("1_u25fl")
+stretch_mode = 3
+
+[node name="TileMap" type="TileMapLayer" parent="." unique_id=1424643808]
+position = Vector2(-24, 3343)
+tile_set = SubResource("TileSet_hqt8u")
+
+[node name="Floor" type="StaticBody2D" parent="TileMap" unique_id=562964865]
+position = Vector2(1921, 17)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TileMap/Floor" unique_id=1796087944]
+scale = Vector2(200, 1)
+shape = SubResource("RectangleShape2D_7pnuw")
+
+[node name="Lwall" type="StaticBody2D" parent="TileMap" unique_id=1032651253]
+position = Vector2(41, -984)
+rotation = 1.5707964
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TileMap/Lwall" unique_id=1795349320]
+scale = Vector2(100, 4)
+shape = SubResource("RectangleShape2D_7pnuw")
+
+[node name="Rwall" type="StaticBody2D" parent="TileMap" unique_id=1373562290]
+position = Vector2(3921, -990)
+rotation = 1.5707964
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TileMap/Rwall" unique_id=1691460778]
+scale = Vector2(100, 1)
+shape = SubResource("RectangleShape2D_7pnuw")
+
+[node name="Couch" parent="TileMap" unique_id=1678074635 instance=ExtResource("2_52tvu")]
+position = Vector2(1672, -175)
+
+[node name="Table" parent="TileMap" unique_id=1911265545 instance=ExtResource("8_pvfsd")]
+position = Vector2(2175, -96)
+scale = Vector2(5, 5)
+
+[node name="Shelves" type="Node" parent="TileMap" unique_id=1718891800]
+
+[node name="Shelf" parent="TileMap/Shelves" unique_id=652424577 instance=ExtResource("3_hqt8u")]
+position = Vector2(852, 3000)
+scale = Vector2(0.68000245, 1)
+
+[node name="Shelf2" parent="TileMap/Shelves" unique_id=740538176 instance=ExtResource("3_hqt8u")]
+position = Vector2(264, 3000)
+
+[node name="Shelf3" parent="TileMap/Shelves" unique_id=1634256225 instance=ExtResource("3_hqt8u")]
+position = Vector2(2518, 3046)
+
+[node name="Shelf4" parent="TileMap/Shelves" unique_id=1556676628 instance=ExtResource("3_hqt8u")]
+position = Vector2(3048.9998, 2949)
+scale = Vector2(1.76, 1)
+
+[node name="Shelf6" parent="TileMap/Shelves" unique_id=744643620 instance=ExtResource("3_hqt8u")]
+position = Vector2(2261, 3201)
+scale = Vector2(0.1, 1)
+
+[node name="Shelf5" parent="TileMap/Shelves" unique_id=494348300 instance=ExtResource("3_hqt8u")]
+position = Vector2(3758, 2946)
+scale = Vector2(0.52, 1)
+
+[node name="Shelf8" parent="TileMap/Shelves" unique_id=1298628983 instance=ExtResource("3_hqt8u")]
+position = Vector2(3657, 2745)
+scale = Vector2(0.52, 1)
+
+[node name="Shelf9" parent="TileMap/Shelves" unique_id=182609563 instance=ExtResource("3_hqt8u")]
+position = Vector2(3441, 2630)
+scale = Vector2(0.52, 1)
+
+[node name="Shelf7" parent="TileMap/Shelves" unique_id=1303443290 instance=ExtResource("3_hqt8u")]
+position = Vector2(3819, 2838)
+scale = Vector2(0.2185504, 1.0592912)
+
+[node name="Shelf10" parent="TileMap/Shelves" unique_id=1286859186 instance=ExtResource("3_hqt8u")]
+position = Vector2(1727, 2408)
+scale = Vector2(0.2185504, 1.0592912)
+
+[node name="Shelf11" parent="TileMap/Shelves" unique_id=638778989 instance=ExtResource("3_hqt8u")]
+position = Vector2(1915, 2326)
+scale = Vector2(0.2185504, 1.0592912)
+
+[node name="Shelf12" parent="TileMap/Shelves" unique_id=693056144 instance=ExtResource("3_hqt8u")]
+position = Vector2(1479, 2208)
+scale = Vector2(1.1385481, 1.0592912)
+
+[node name="Power Outlet" parent="TileMap" unique_id=1858107069 instance=ExtResource("4_h2cbv")]
+position = Vector2(544, -119)
+scale = Vector2(0.75, 0.75)
+
+[node name="Books" type="Node" parent="TileMap" unique_id=1147373793]
+
+[node name="Blue Book" parent="TileMap/Books" unique_id=22588412 instance=ExtResource("5_wqrpq")]
+position = Vector2(1167, 3308)
+rotation = 0.48734742
+
+[node name="Blue Book2" parent="TileMap/Books" unique_id=1586652815 instance=ExtResource("5_wqrpq")]
+position = Vector2(1103, 3320)
+rotation = 1.094038
+
+[node name="Red Book" parent="TileMap/Books" unique_id=583707597 instance=ExtResource("6_r15cd")]
+position = Vector2(1212, 3300)
+
+[node name="Blue Book5" parent="TileMap/Books" unique_id=1424311544 instance=ExtResource("5_wqrpq")]
+position = Vector2(2362, 3307)
+rotation = -0.48694685
+
+[node name="Blue Book6" parent="TileMap/Books" unique_id=1389587726 instance=ExtResource("5_wqrpq")]
+position = Vector2(2315, 3305)
+
+[node name="Red Book3" parent="TileMap/Books" unique_id=2002799120 instance=ExtResource("6_r15cd")]
+position = Vector2(2434, 3326.9998)
+rotation = -1.2911963
+
+[node name="Red Book2" parent="TileMap/Books" unique_id=121346618 instance=ExtResource("6_r15cd")]
+position = Vector2(1321, 2554)
+
+[node name="Red Book5" parent="TileMap/Books" unique_id=2093682823 instance=ExtResource("6_r15cd")]
+position = Vector2(1359.9999, 2554)
+scale = Vector2(2.67731, 1.0195313)
+
+[node name="Red Book6" parent="TileMap/Books" unique_id=1575087828 instance=ExtResource("6_r15cd")]
+position = Vector2(1416, 2554)
+scale = Vector2(2.67731, 1.0195313)
+
+[node name="Blue Book4" parent="TileMap/Books" unique_id=383116550 instance=ExtResource("5_wqrpq")]
+position = Vector2(1495.0001, 2578)
+rotation = -1.0819185
+
+[node name="Window" parent="TileMap" unique_id=984352410 instance=ExtResource("5_euhem")]
+position = Vector2(2959, -933)
+
+[node name="Window2" parent="TileMap" unique_id=19263672 instance=ExtResource("5_euhem")]
+position = Vector2(2229, -933)
+
+[node name="Window3" parent="TileMap" unique_id=949073300 instance=ExtResource("5_euhem")]
+position = Vector2(1510, -933)
+
+[node name="Router" parent="TileMap" unique_id=2080919676 instance=ExtResource("7_r15cd")]
+position = Vector2(160, -394)
+scale = Vector2(0.5, 0.5)
+
+[node name="Player" parent="." unique_id=578981327 instance=ExtResource("2_7pnuw")]
+position = Vector2(2860, 2537)
+collision_layer = 17
+collision_mask = 1
+
+[node name="Camera2D" type="Camera2D" parent="Player" unique_id=1842819410]
+position = Vector2(125, -125)
+process_callback = 0
+limit_left = 82
+limit_top = -21312
+limit_right = 8640
+limit_bottom = 9978778
+limit_smoothed = true
+position_smoothing_enabled = true
+drag_horizontal_enabled = true
+drag_vertical_enabled = true
+drag_left_margin = 0.4
+drag_top_margin = 0.4
+drag_right_margin = 0.4
+drag_bottom_margin = 0.0
+editor_draw_limits = true
+editor_draw_drag_margin = true
+
+[node name="Enemies" type="Node" parent="." unique_id=816962213]
+
+[node name="FlyingEnemy" parent="Enemies" unique_id=834859223 instance=ExtResource("9_r4pos")]
+position = Vector2(2940, 2905)
+scale = Vector2(7, 7)
+
+[node name="FlyingEnemy2" parent="Enemies" unique_id=1659433333 instance=ExtResource("9_r4pos")]
+position = Vector2(2590, 2702.0002)
+scale = Vector2(17.83107, 17.83107)
+
+[node name="FlyingEnemy3" parent="Enemies" unique_id=2128016174 instance=ExtResource("9_r4pos")]
+position = Vector2(3015, 2705.0002)
+scale = Vector2(13.078405, 13.078405)
+
+[node name="FlyingEnemy4" parent="Enemies" unique_id=1571885448 instance=ExtResource("9_r4pos")]
+position = Vector2(1879.0001, 2539.9998)
+scale = Vector2(7, 7)
+
+[node name="FlyingEnemy5" parent="Enemies" unique_id=1498326061 instance=ExtResource("9_r4pos")]
+position = Vector2(1175, 2524)
+scale = Vector2(16.686655, 16.686655)
+
+[node name="FlyingEnemy7" parent="Enemies" unique_id=461208546 instance=ExtResource("9_r4pos")]
+position = Vector2(1067, 2294)
+scale = Vector2(7.8240013, 7.8240013)
+
+[node name="FlyingEnemy8" parent="Enemies" unique_id=608635465 instance=ExtResource("9_r4pos")]
+position = Vector2(1108, 2725)
+scale = Vector2(10.639881, 10.639881)
+
+[node name="FlyingEnemy9" parent="Enemies" unique_id=1622857277 instance=ExtResource("9_r4pos")]
+position = Vector2(918.99994, 2206.9998)
+scale = Vector2(43.85561, 16.818426)
+
+[node name="FlyingEnemy10" parent="Enemies" unique_id=1961008777 instance=ExtResource("9_r4pos")]
+position = Vector2(812.99994, 2433.9998)
+scale = Vector2(42.41549, 42.41549)
+
+[node name="FlyingEnemy11" parent="Enemies" unique_id=1965794759 instance=ExtResource("9_r4pos")]
+position = Vector2(604.99994, 2484)
+scale = Vector2(16.686655, 16.686655)
+
+[node name="FlyingEnemy12" parent="Enemies" unique_id=536597683 instance=ExtResource("9_r4pos")]
+position = Vector2(710.99994, 2716)
+scale = Vector2(27.87218, 27.87218)
+
+[node name="FlyingEnemy6" parent="Enemies" unique_id=1089081118 instance=ExtResource("9_r4pos")]
+position = Vector2(1812, 2425.0002)
+scale = Vector2(7, 7)
+
+[node name="Label" type="Label" parent="." unique_id=1335276878]
+offset_left = 1078.0
+offset_top = 2317.0002
+offset_right = 1233.0
+offset_bottom = 2334.0002
+scale = Vector2(1.199599, 1.4635602)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "It's a leap of faith Ampy"
+
+[node name="Clock" parent="." unique_id=61810604 instance=ExtResource("12_idx6k")]
+position = Vector2(1845, 2752)
+
+[node name="Couch" parent="." unique_id=140753801 instance=ExtResource("2_52tvu")]
+position = Vector2(3477, 3160)
