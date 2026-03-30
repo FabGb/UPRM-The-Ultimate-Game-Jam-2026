@@ -96,7 +96,7 @@ theme_override_styles/normal = SubResource("StyleBoxEmpty_7nrmo")
 theme_override_styles/hover = SubResource("StyleBoxFlat_clbkb")
 icon = ExtResource("4_l7wge")
 
-[connection signal="pressed" from="CanvasLayer/GridContainer/playBtn" to="." method="_on_play_button_pressed"]
 [connection signal="pressed" from="CanvasLayer/GridContainer/playBtn" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/GridContainer/playBtn" to="." method="_on_play_button_pressed"]
 [connection signal="pressed" from="CanvasLayer/GridContainer/playBtn" to="." method="_on_play_btn_pressed"]
 [connection signal="pressed" from="CanvasLayer/quitBtn" to="." method="_on_quit_btn_pressed"]
