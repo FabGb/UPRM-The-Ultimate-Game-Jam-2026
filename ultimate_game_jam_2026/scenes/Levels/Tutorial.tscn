@@ -12,6 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://drmhs18jmn5tu" path="res://shoe_box.tscn" id="9_wqb03"]
 [ext_resource type="PackedScene" uid="uid://bxlgmoiwuwfbg" path="res://scenes/Player-Interaction/area_2d.tscn" id="10_wqb03"]
 [ext_resource type="PackedScene" uid="uid://c75i2j3wb1peg" path="res://scenes/Player-Interaction/shelf.tscn" id="11_mkn7c"]
+[ext_resource type="PackedScene" uid="uid://paw8w83sck8j" path="res://scenes/Enemies/groundEnemy.tscn" id="12_mwsxh"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_wco3g"]
 font_size = 50
@@ -22,6 +23,11 @@ font_size = 50
 font_color = Color(0, 0, 0, 1)
 
 [sub_resource type="LabelSettings" id="LabelSettings_251ly"]
+font_size = 50
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_fqshk"]
+line_spacing = 1.0
 font_size = 50
 font_color = Color(0, 0, 0, 1)
 
@@ -130,6 +136,18 @@ drag_bottom_margin = 0.0
 editor_draw_limits = true
 editor_draw_drag_margin = true
 
+[node name="GroundEnemy" parent="." unique_id=1661958844 instance=ExtResource("12_mwsxh")]
+position = Vector2(3951.0002, -602)
+scale = Vector2(3, 3)
+
+[node name="GroundEnemy2" parent="." unique_id=1787904051 instance=ExtResource("12_mwsxh")]
+position = Vector2(4224, -591)
+scale = Vector2(3, 3)
+
+[node name="GroundEnemy3" parent="." unique_id=869319545 instance=ExtResource("12_mwsxh")]
+position = Vector2(4605, -696)
+scale = Vector2(3, 3)
+
 [node name="Game UI" type="Control" parent="." unique_id=143686574]
 layout_mode = 3
 anchors_preset = 0
@@ -162,8 +180,18 @@ offset_left = 4534.0
 offset_top = 3787.0
 offset_right = 5080.0
 offset_bottom = 3856.0
-text = "Use the shift key to Dash Across!"
+text = "Use the Dash to jump across!"
 label_settings = SubResource("LabelSettings_251ly")
+
+[node name="Label" type="Label" parent="Game UI" unique_id=1400353872]
+layout_mode = 0
+offset_left = 2308.0
+offset_top = 4076.0
+offset_right = 3171.0
+offset_bottom = 4179.0
+text = "Press the shift key 
+to Dash and kill enemies!"
+label_settings = SubResource("LabelSettings_fqshk")
 
 [node name="Floor" type="StaticBody2D" parent="." unique_id=122893802]
 
