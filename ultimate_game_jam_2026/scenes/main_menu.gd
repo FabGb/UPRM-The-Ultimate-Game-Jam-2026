@@ -1,9 +1,10 @@
 extends Control
 
-const levelScene = "res://scenes/Levels/Tutorial.tscn"
-var change_scene = preload(levelScene)
+@export_file('*.tscn') var change_scene
+
+func _on_quit_btn_pressed() -> void:
+	get_tree().quit()
 
 
-func _on_button_pressed() -> void:
-	get_tree().change_scene_to_packed(change_scene)
-	pass # Replace with function body.
+func _on_play_btn_pressed() -> void:
+	get_tree().change_scene_to_file(change_scene)
