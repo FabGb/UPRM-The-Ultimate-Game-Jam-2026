@@ -9,7 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://cgmdrny0vnmt3" path="res://scenes/Player-Interaction/blue_book.tscn" id="5_pt3nr"]
 [ext_resource type="PackedScene" uid="uid://cybc1nakgp71v" path="res://scenes/Player-Interaction/couch.tscn" id="7_okfd3"]
 [ext_resource type="PackedScene" uid="uid://enfst5441bwv" path="res://scenes/Player-Interaction/red_book.tscn" id="9_dswxo"]
-[ext_resource type="PackedScene" uid="uid://drmhs18jmn5tu" path="res://shoe_box.tscn" id="9_wqb03"]
+[ext_resource type="PackedScene" uid="uid://drmhs18jmn5tu" path="res://scenes/Player-Interaction/shoe_box.tscn" id="9_wqb03"]
 [ext_resource type="PackedScene" uid="uid://bxlgmoiwuwfbg" path="res://scenes/Player-Interaction/area_2d.tscn" id="10_wqb03"]
 [ext_resource type="PackedScene" uid="uid://c75i2j3wb1peg" path="res://scenes/Player-Interaction/shelf.tscn" id="11_mkn7c"]
 [ext_resource type="PackedScene" uid="uid://paw8w83sck8j" path="res://scenes/Enemies/groundEnemy.tscn" id="12_mwsxh"]
@@ -116,7 +116,6 @@ scale = Vector2(2, 2)
 
 [node name="Player" parent="." unique_id=578981327 instance=ExtResource("3_v54kn")]
 position = Vector2(302, -380)
-collision_mask = 17
 
 [node name="Camera2D" type="Camera2D" parent="Player" unique_id=448429061]
 position = Vector2(125, -250)

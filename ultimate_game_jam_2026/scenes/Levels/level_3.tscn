@@ -173,6 +173,7 @@ position = Vector2(1510, -933)
 [node name="Router" parent="TileMap" unique_id=2080919676 instance=ExtResource("7_r15cd")]
 position = Vector2(160, -394)
 scale = Vector2(0.5, 0.5)
+next_scene = "res://scenes/ending_screen.tscn"
 
 [node name="Couch2" parent="TileMap" unique_id=140753801 instance=ExtResource("2_52tvu")]
 position = Vector2(3501, -183)

@@ -33,7 +33,7 @@ var dashDecel = 1000
 @onready var camera = $Camera2D
 @onready var flashSound = preload("res://assets/Sounds/flash.MP3")
 @onready var dashSound = preload("res://assets/Sounds/dash.MP3")
-@onready var hurtSound = preload("res://assets/Sounds/hurt.MP3")
+@onready var hurtSound = preload("res://assets/Sounds/hurt.mp3")
 
 func sign(num: float) -> int:
 	if num >= 0:
@@ -55,7 +55,9 @@ func _ready() -> void:
 
 func _physics_process(delta: float) -> void:
 	movement(delta)
+	flip_player()
 	powerUpCollisions()
+	camera_control()
 	animate()
 
 	if iFrames > 0:
@@ -151,7 +153,6 @@ func movement(delta):
 		knockbackTime = 10
 
 	move_and_slide()
-	flip_player()
 
 func flip_player():
 	if knockbackTime % 10 > 5:
@@ -161,7 +162,7 @@ func flip_player():
 	
 	if velocity.x < 0:
 		player_sprite.flip_h = true
-		camera.offset.x = lerp(camera.offset.x,-45.0,0.05)
+		camera.offset.x = lerp(camera.offset.x,-50.0,0.20)
 	elif velocity.x > 0:
 		player_sprite.flip_h = false
 		camera.offset.x = lerp(camera.offset.x,45.0,0.05)
