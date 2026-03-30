@@ -276,6 +276,7 @@ shape = SubResource("CircleShape2D_hk2jt")
 
 [node name="Router" parent="Objects" unique_id=2080919676 instance=ExtResource("8_4p1o3")]
 position = Vector2(3817, -1158)
+next_scene = "res://scenes/Levels/level_3.tscn"
 
 [node name="Shelf" parent="Objects" unique_id=652424577 instance=ExtResource("9_j85eu")]
 position = Vector2(4457.0005, -405.00003)

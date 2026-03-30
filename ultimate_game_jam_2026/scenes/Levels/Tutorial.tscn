@@ -30,10 +30,6 @@ font_color = Color(0, 0, 0, 1)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wco3g"]
 size = Vector2(20, 21)
 
-[sub_resource type="LabelSettings" id="LabelSettings_wco3g"]
-font_size = 50
-font_color = Color(0.105643965, 0.06989858, 0.018451989, 1)
-
 [node name="Tutorial" type="Node2D" unique_id=1675367804]
 
 [node name="Background" type="Sprite2D" parent="." unique_id=1144685297]
@@ -114,6 +110,7 @@ scale = Vector2(2, 2)
 
 [node name="Player" parent="." unique_id=578981327 instance=ExtResource("3_v54kn")]
 position = Vector2(302, -380)
+collision_mask = 17
 
 [node name="Camera2D" type="Camera2D" parent="Player" unique_id=448429061]
 position = Vector2(125, -250)
@@ -147,7 +144,7 @@ offset_left = -276.0
 offset_top = 4344.0
 offset_right = 622.0
 offset_bottom = 4546.0
-text = "Use the D-pad to move! "
+text = "Use the Arrow keys to move! "
 label_settings = SubResource("LabelSettings_wco3g")
 
 [node name="Jump" type="Label" parent="Game UI" unique_id=1390986433]
@@ -156,7 +153,7 @@ offset_left = 1197.0
 offset_top = 4323.0
 offset_right = 1587.0
 offset_bottom = 4392.0
-text = "Press A to jump!"
+text = "Press the space bar to jump!"
 label_settings = SubResource("LabelSettings_wqb03")
 
 [node name="Dash" type="Label" parent="Game UI" unique_id=1668763529]
@@ -165,7 +162,7 @@ offset_left = 4534.0
 offset_top = 3787.0
 offset_right = 5080.0
 offset_bottom = 3856.0
-text = "Use LB to Dash Across!"
+text = "Use the shift key to Dash Across!"
 label_settings = SubResource("LabelSettings_251ly")
 
 [node name="Floor" type="StaticBody2D" parent="." unique_id=122893802]

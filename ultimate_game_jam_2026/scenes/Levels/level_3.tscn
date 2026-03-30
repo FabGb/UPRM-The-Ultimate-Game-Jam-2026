@@ -174,6 +174,12 @@ position = Vector2(1510, -933)
 position = Vector2(160, -394)
 scale = Vector2(0.5, 0.5)
 
+[node name="Couch2" parent="TileMap" unique_id=140753801 instance=ExtResource("2_52tvu")]
+position = Vector2(3501, -183)
+
+[node name="Clock" parent="TileMap" unique_id=61810604 instance=ExtResource("12_idx6k")]
+position = Vector2(1869, -591)
+
 [node name="Player" parent="." unique_id=578981327 instance=ExtResource("2_7pnuw")]
 position = Vector2(2860, 2537)
 collision_layer = 17
@@ -255,9 +261,3 @@ offset_bottom = 2334.0002
 scale = Vector2(1.199599, 1.4635602)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "It's a leap of faith Ampy"
-
-[node name="Clock" parent="." unique_id=61810604 instance=ExtResource("12_idx6k")]
-position = Vector2(1845, 2752)
-
-[node name="Couch" parent="." unique_id=140753801 instance=ExtResource("2_52tvu")]
-position = Vector2(3477, 3160)
