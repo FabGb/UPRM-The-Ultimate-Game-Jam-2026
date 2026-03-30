@@ -10,6 +10,8 @@ var directionTimer = 60
 var knockback = false
 var knockbackTime = 0
 
+@onready var deadSound = preload("res://assets/Sounds/enemy_death.MP3")
+
 func sign(num: float) -> int:
 	if num >= 0:
 		return 1
@@ -26,6 +28,7 @@ func _physics_process(delta: float) -> void:
 		velocity += get_gravity() * delta
 
 	if health <= 0:
+		SoundManager.play_sound_global(deadSound, position)
 		queue_free()
 
 	if knockbackTime > 0:

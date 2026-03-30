@@ -14,6 +14,8 @@ var knockbackTime = 0
 
 var angle = 0
 
+@onready var deadSound = preload("res://assets/Sounds/enemy_death.MP3")
+
 func getDistance(target: Vector2) -> float:
 	return sqrt(pow(target.x - position.x, 2) + pow(target.y - position.y, 2))
 	health += ceil(($CollisionShape2D.shape as CircleShape2D).radius) * 4
@@ -29,6 +31,7 @@ func _ready() -> void:
 
 func _physics_process(delta: float) -> void:
 	if health <= 0:
+		SoundManager.play_sound_global(deadSound, position)
 		queue_free()
 
 	if knockback:

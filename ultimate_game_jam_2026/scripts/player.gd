@@ -11,6 +11,7 @@ var gotPhonePowerUp = false
 var gotCarPowerUp = false
 var hasPhone = false
 var hasCar = false
+var phoneAttackCooldown = 0
 
 var timer = 0
 var iFrames = 10
@@ -30,6 +31,9 @@ var dashDecel = 1000
 @onready var player_sprite = $AnimatedSprite2D
 @onready var attackArea = $AttackArea
 @onready var camera = $Camera2D
+@onready var flashSound = preload("res://assets/Sounds/flash.MP3")
+@onready var dashSound = preload("res://assets/Sounds/dash.MP3")
+@onready var hurtSound = preload("res://assets/Sounds/hurt.MP3")
 
 func sign(num: float) -> int:
 	if num >= 0:
@@ -39,7 +43,7 @@ func sign(num: float) -> int:
 
 #--------BUILT-IN FUNCTIONS--------#
 func _ready() -> void:
-	await add_to_group("Player")
+	add_to_group("Player")
 	$AttackArea.scale = Vector2(1, 1)
 	$AttackArea/CollisionShape2D.scale = Vector2(1, 1)
 
@@ -56,6 +60,9 @@ func _physics_process(delta: float) -> void:
 
 	if iFrames > 0:
 		iFrames -= 1
+	
+	if hasPhone and phoneAttackCooldown > 0:
+		phoneAttackCooldown -= 1
 
 #--------CUSTOM FUNCTIONS--------#
 func movement(delta):
@@ -109,6 +116,7 @@ func movement(delta):
 			velocity.x = move_toward(velocity.x, target_speed, accel * delta)
 
 		if Input.is_action_just_pressed("Dash") and not isDashing:
+			SoundManager.play_sound_global(dashSound, position)
 			isDashing = true
 			dashTime = 10
 			if direction != 0:
@@ -174,10 +182,10 @@ func camera_control():
 	camera.offset.y = clamp(camera.offset.y,-150,150)
 
 func powerUpCollisions() -> void:
-	var direction := Input.get_axis("ui_left", "ui_right")
-
-	if Input.is_action_just_pressed("Power_Use") and hasPhone:
+	if Input.is_action_just_pressed("Power_Use") and hasPhone and phoneAttackCooldown <= 0:
+		SoundManager.play_sound_global(flashSound, position)
 		phoneAttack()
+		phoneAttackCooldown = 60
 	
 	if Input.is_action_pressed("Power_Use") and hasCar:
 		speed = speed * 2
@@ -217,7 +225,7 @@ func powerUpCollisions() -> void:
 		scale = Vector2(1, 2)
 		force = Vector2(1, 1)
 
-		attack = 10
+		attack = 30
 		gotPhonePowerUp = false
 		hasPhone = true
 		hasCar = false 		# override power up if collected
@@ -264,6 +272,7 @@ func carAttack() -> void:
 
 func takeDamage(damage: float) -> void:
 	if iFrames <= 0:
+		SoundManager.play_sound_global(hurtSound, position)
 		health -= damage
 		iFrames = 20
 		knockback = true

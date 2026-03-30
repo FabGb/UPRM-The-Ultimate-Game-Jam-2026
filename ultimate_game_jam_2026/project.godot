@@ -16,6 +16,10 @@ config/features=PackedStringArray("4.6", "Forward Plus")
 boot_splash/image="uid://7j1m228267d3"
 config/icon="res://icon.svg"
 
+[autoload]
+
+SoundManager="*uid://dgefvq13algud"
+
 [display]
 
 window/size/viewport_width=1280
