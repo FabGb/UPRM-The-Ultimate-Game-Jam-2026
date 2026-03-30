@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://cj7yk7ilitje1"
+path="res://.godot/imported/coolkid - double.mp3-8b3447a36aea81d5c911dab1f3af7fb8.mp3str"
+
+[deps]
+
+source_file="res://assets/Sounds/coolkid - double.mp3"
+dest_files=["res://.godot/imported/coolkid - double.mp3-8b3447a36aea81d5c911dab1f3af7fb8.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

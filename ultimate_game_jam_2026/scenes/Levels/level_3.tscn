@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://dnuk61q6koum8"]
 
+[ext_resource type="Script" uid="uid://5fve1bjmdycs" path="res://scenes/Levels/audio_stream_player_2d.gd" id="1_ld14n"]
 [ext_resource type="Texture2D" uid="uid://brunnkgsuq5jx" path="res://assets/Backgrounds/green_wallpaper.PNG" id="1_u25fl"]
 [ext_resource type="PackedScene" uid="uid://v4gh4tjacqmn" path="res://scenes/Player-Interaction/player.tscn" id="2_7pnuw"]
 [ext_resource type="PackedScene" uid="uid://cybc1nakgp71v" path="res://scenes/Player-Interaction/couch.tscn" id="2_52tvu"]
@@ -28,6 +29,11 @@ sources/0 = SubResource("TileSetAtlasSource_52tvu")
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7pnuw"]
 
 [node name="Level_3" type="Node2D" unique_id=552326848]
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=188916128]
+position = Vector2(136, 2949)
+scale = Vector2(0.5, 0.5)
+script = ExtResource("1_ld14n")
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=1819351614]
 offset_right = 1280.0

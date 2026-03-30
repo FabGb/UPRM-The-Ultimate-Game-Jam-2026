@@ -13,6 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://bxlgmoiwuwfbg" path="res://scenes/Player-Interaction/area_2d.tscn" id="10_wqb03"]
 [ext_resource type="PackedScene" uid="uid://c75i2j3wb1peg" path="res://scenes/Player-Interaction/shelf.tscn" id="11_mkn7c"]
 [ext_resource type="PackedScene" uid="uid://paw8w83sck8j" path="res://scenes/Enemies/groundEnemy.tscn" id="12_mwsxh"]
+[ext_resource type="Script" uid="uid://5fve1bjmdycs" path="res://scenes/Levels/audio_stream_player_2d.gd" id="14_fqshk"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_wco3g"]
 font_size = 50
@@ -37,6 +38,9 @@ font_color = Color(0, 0, 0, 1)
 size = Vector2(20, 21)
 
 [node name="Tutorial" type="Node2D" unique_id=1675367804]
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=449784032]
+script = ExtResource("14_fqshk")
 
 [node name="Background" type="Sprite2D" parent="." unique_id=1144685297]
 position = Vector2(4313.9995, -1977)

@@ -165,7 +165,7 @@ func flip_player():
 		camera.offset.x = lerp(camera.offset.x,-50.0,0.20)
 	elif velocity.x > 0:
 		player_sprite.flip_h = false
-		camera.offset.x = lerp(camera.offset.x,45.0,0.05)
+		camera.offset.x = lerp(camera.offset.x,50.0,0.05)
 
 func animate() -> void:
 	if hasPhone:
@@ -180,7 +180,7 @@ func animate() -> void:
 func camera_control():
 	var cam_direction = Input.get_axis("Cam_Up","Cam_D")
 	camera.offset.y += cam_direction*5
-	camera.offset.y = clamp(camera.offset.y,-150,150)
+	camera.offset.y = clamp(camera.offset.y,-250,250)
 
 func powerUpCollisions() -> void:
 	if Input.is_action_just_pressed("Power_Use") and hasPhone and phoneAttackCooldown <= 0:

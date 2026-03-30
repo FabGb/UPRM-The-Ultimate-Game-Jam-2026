@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://b5kqvxcdbeep1"]
 
+[ext_resource type="Script" uid="uid://5fve1bjmdycs" path="res://scenes/Levels/audio_stream_player_2d.gd" id="1_a60bd"]
 [ext_resource type="Texture2D" uid="uid://t4y3isy8iclk" path="res://assets/Backgrounds/orange_wallpaper.png" id="1_ac15f"]
 [ext_resource type="PackedScene" uid="uid://v4gh4tjacqmn" path="res://scenes/Player-Interaction/player.tscn" id="2_3ydyl"]
 [ext_resource type="Texture2D" uid="uid://d3ugtr1qr8sev" path="res://assets/Objects/power_outlet.PNG" id="2_o21ul"]
@@ -28,6 +29,9 @@ radius = 80.50156
 size = Vector2(20, 21)
 
 [node name="Level-1" type="Node2D" unique_id=1662869028]
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=2100216877]
+script = ExtResource("1_a60bd")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1063140801]
 position = Vector2(4395.0005, -2332)
