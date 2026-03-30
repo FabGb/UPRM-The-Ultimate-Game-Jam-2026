@@ -16,6 +16,7 @@
 [ext_resource type="PackedScene" uid="uid://paw8w83sck8j" path="res://scenes/Enemies/groundEnemy.tscn" id="12_vtd0g"]
 [ext_resource type="PackedScene" uid="uid://c1afsbqgxbie4" path="res://scenes/Enemies/flying_enemy.tscn" id="13_hk2jt"]
 [ext_resource type="PackedScene" uid="uid://cap4sae5plgfy" path="res://scenes/Player-Interaction/phone_power_up.tscn" id="15_vtd0g"]
+[ext_resource type="PackedScene" uid="uid://drmhs18jmn5tu" path="res://scenes/Player-Interaction/shoe_box.tscn" id="17_5gowt"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_hk2jt"]
 radius = 80.50156
@@ -155,19 +156,9 @@ position = Vector2(6836, -202)
 rotation = 1.5707964
 scale = Vector2(2, 2)
 
-[node name="Red Book17" parent="Objects" unique_id=1388729082 instance=ExtResource("6_xxpsm")]
-position = Vector2(7968, 441)
-rotation = 1.5707964
-scale = Vector2(2, 2)
-
 [node name="Red Book18" parent="Objects" unique_id=1608432316 instance=ExtResource("6_xxpsm")]
-position = Vector2(7968, 361)
-rotation = 1.5707964
-scale = Vector2(2, 2)
-
-[node name="Red Book19" parent="Objects" unique_id=330693620 instance=ExtResource("6_xxpsm")]
-position = Vector2(7968, 401)
-rotation = 1.5707964
+position = Vector2(7989, 382)
+rotation = -0.7853982
 scale = Vector2(2, 2)
 
 [node name="Red Book16" parent="Objects" unique_id=489885398 instance=ExtResource("6_xxpsm")]
@@ -241,7 +232,7 @@ rotation = 4.712389
 scale = Vector2(2, 2)
 
 [node name="Red Book49" parent="Objects" unique_id=1743168047 instance=ExtResource("6_xxpsm")]
-position = Vector2(7765, 241)
+position = Vector2(7804, 241)
 rotation = 4.712389
 scale = Vector2(2, 2)
 
@@ -305,27 +296,22 @@ rotation = -1.5707964
 scale = Vector2(2, 2)
 
 [node name="Blue Book32" parent="Objects" unique_id=1764807589 instance=ExtResource("5_l5ivm")]
-position = Vector2(7757, 401)
+position = Vector2(7796, 401)
 rotation = -1.5707964
 scale = Vector2(2, 2)
 
 [node name="Blue Book33" parent="Objects" unique_id=817884934 instance=ExtResource("5_l5ivm")]
-position = Vector2(7757, 441)
+position = Vector2(7796, 441)
 rotation = -1.5707964
 scale = Vector2(2, 2)
 
 [node name="Blue Book28" parent="Objects" unique_id=1007414859 instance=ExtResource("5_l5ivm")]
-position = Vector2(7533, 119)
+position = Vector2(7533, 133)
 rotation = -1.5707964
 scale = Vector2(2, 2)
 
 [node name="Blue Book29" parent="Objects" unique_id=309283804 instance=ExtResource("5_l5ivm")]
-position = Vector2(7534, 160)
-rotation = -1.5707964
-scale = Vector2(2, 2)
-
-[node name="Blue Book30" parent="Objects" unique_id=1696681051 instance=ExtResource("5_l5ivm")]
-position = Vector2(7534, 200)
+position = Vector2(7534, 174)
 rotation = -1.5707964
 scale = Vector2(2, 2)
 
@@ -351,36 +337,6 @@ scale = Vector2(2, 2)
 
 [node name="Blue Book20" parent="Objects" unique_id=43488508 instance=ExtResource("5_l5ivm")]
 position = Vector2(7054, -1)
-rotation = 1.5707964
-scale = Vector2(2, 2)
-
-[node name="Red Book34" parent="Objects" unique_id=738227006 instance=ExtResource("6_xxpsm")]
-position = Vector2(7533, 320)
-rotation = 4.712389
-scale = Vector2(2, 2)
-
-[node name="Red Book36" parent="Objects" unique_id=1866931733 instance=ExtResource("6_xxpsm")]
-position = Vector2(7533, 280)
-rotation = 4.712389
-scale = Vector2(2, 2)
-
-[node name="Red Book45" parent="Objects" unique_id=1832084941 instance=ExtResource("6_xxpsm")]
-position = Vector2(7516, 362)
-rotation = 4.712389
-scale = Vector2(2, 2)
-
-[node name="Red Book46" parent="Objects" unique_id=1532276396 instance=ExtResource("6_xxpsm")]
-position = Vector2(7516, 402)
-rotation = 4.712389
-scale = Vector2(2, 2)
-
-[node name="Blue Book26" parent="Objects" unique_id=1032409278 instance=ExtResource("5_l5ivm")]
-position = Vector2(7499, 443)
-rotation = 1.5707964
-scale = Vector2(2, 2)
-
-[node name="Blue Book27" parent="Objects" unique_id=130036715 instance=ExtResource("5_l5ivm")]
-position = Vector2(7515, 241)
 rotation = 1.5707964
 scale = Vector2(2, 2)
 
@@ -420,17 +376,17 @@ rotation = 1.5707964
 scale = Vector2(2, 2)
 
 [node name="Red Book47" parent="Objects" unique_id=827403737 instance=ExtResource("6_xxpsm")]
-position = Vector2(7742, 362)
+position = Vector2(7781, 362)
 rotation = 4.712389
 scale = Vector2(2, 2)
 
 [node name="Red Book48" parent="Objects" unique_id=1959187914 instance=ExtResource("6_xxpsm")]
-position = Vector2(7763, 320)
+position = Vector2(7802, 320)
 rotation = 4.712389
 scale = Vector2(2, 2)
 
 [node name="Blue Book31" parent="Objects" unique_id=981618390 instance=ExtResource("5_l5ivm")]
-position = Vector2(7746, 281)
+position = Vector2(7785, 281)
 rotation = 1.5707964
 scale = Vector2(2, 2)
 
@@ -665,3 +621,9 @@ texture = ExtResource("12_14nfc")
 
 [node name="PhonePowerUp" parent="." unique_id=1813305990 instance=ExtResource("15_vtd0g")]
 position = Vector2(2263, -21)
+
+[node name="Shoe box" parent="." unique_id=1316782146 instance=ExtResource("17_5gowt")]
+position = Vector2(7471, 409)
+
+[node name="Shoe box2" parent="." unique_id=424348150 instance=ExtResource("17_5gowt")]
+position = Vector2(7471, 275)
