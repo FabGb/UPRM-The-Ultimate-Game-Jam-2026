@@ -2,8 +2,8 @@
 
 [ext_resource type="Texture2D" uid="uid://2ueb84v0ohbj" path="res://assets/Backgrounds/purple_wallpaper.PNG" id="1_wco3g"]
 [ext_resource type="PackedScene" uid="uid://v4gh4tjacqmn" path="res://scenes/Player-Interaction/player.tscn" id="3_v54kn"]
-[ext_resource type="PackedScene" uid="uid://cs1kg7l7g0kfn" path="res://scenes/side_table.tscn" id="4_pt3nr"]
-[ext_resource type="PackedScene" uid="uid://bkhklqmabhrm2" path="res://scenes/router.tscn" id="4_v54kn"]
+[ext_resource type="PackedScene" uid="uid://cs1kg7l7g0kfn" path="res://scenes/Player-Interaction/side_table.tscn" id="4_pt3nr"]
+[ext_resource type="PackedScene" uid="uid://bkhklqmabhrm2" path="res://scenes/Player-Interaction/router.tscn" id="4_v54kn"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_v54kn"]
 load_path = "res://.godot/imported/Floor.png-1986a68a011c9d9847f815defae65829.ctex"

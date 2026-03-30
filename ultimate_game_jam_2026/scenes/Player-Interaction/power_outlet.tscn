@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://w1h245pqx0gx"]
+
+[ext_resource type="Texture2D" uid="uid://d3ugtr1qr8sev" path="res://assets/Objects/power_outlet.PNG" id="1_bwbfy"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ggjk3"]
+size = Vector2(131, 78)
+
+[node name="Power Outlet" type="Area2D" unique_id=1858107069]
+
+[node name="PowerOutlet" type="Sprite2D" parent="." unique_id=5188464]
+position = Vector2(6, -1)
+texture = ExtResource("1_bwbfy")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1406400522]
+position = Vector2(5.5, -1)
+shape = SubResource("RectangleShape2D_ggjk3")

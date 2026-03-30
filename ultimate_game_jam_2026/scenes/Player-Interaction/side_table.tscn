@@ -2,8 +2,8 @@
 
 [ext_resource type="Texture2D" uid="uid://dkt4xdjy3kfgx" path="res://assets/Objects/side_table.PNG" id="1_o3vas"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_o280c"]
-size = Vector2(36, 36)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_o3vas"]
+size = Vector2(36, 39)
 
 [node name="Table" type="StaticBody2D" unique_id=1911265545]
 
@@ -12,7 +12,6 @@ position = Vector2(-9.536743e-07, -6.0000005)
 scale = Vector2(0.24743398, 0.19064748)
 texture = ExtResource("1_o3vas")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1122728189]
-position = Vector2(0, -13)
-shape = SubResource("RectangleShape2D_o280c")
-disabled = true
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=874465757]
+position = Vector2(0, -12.5)
+shape = SubResource("RectangleShape2D_o3vas")

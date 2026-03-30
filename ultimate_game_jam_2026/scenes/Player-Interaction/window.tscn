@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://c45d1jfsqvpmh"]
+
+[ext_resource type="Texture2D" uid="uid://84gtm33rnlso" path="res://assets/Objects/window.PNG" id="1_mvsta"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hjewq"]
+size = Vector2(348, 334)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mvsta"]
+size = Vector2(380.5, 20)
+
+[node name="Window" type="Area2D" unique_id=984352410]
+
+[node name="Window" type="Sprite2D" parent="." unique_id=375564938]
+position = Vector2(-1, 27)
+texture = ExtResource("1_mvsta")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=202272691]
+position = Vector2(-1, 28)
+shape = SubResource("RectangleShape2D_hjewq")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=978182041]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=826147190]
+position = Vector2(-0.25, 208)
+shape = SubResource("RectangleShape2D_mvsta")
