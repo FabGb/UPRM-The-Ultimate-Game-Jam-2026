@@ -11,10 +11,14 @@ config_version=5
 [application]
 
 config/name="Ultimate Game Jam 2026"
-run/main_scene="uid://dd70w6fnyxcp6"
+run/main_scene="uid://c51thjta5truj"
 config/features=PackedStringArray("4.6", "Forward Plus")
 boot_splash/image="uid://7j1m228267d3"
 config/icon="res://icon.svg"
+
+[autoload]
+
+SoundManager="*uid://dgefvq13algud"
 
 [display]
 
