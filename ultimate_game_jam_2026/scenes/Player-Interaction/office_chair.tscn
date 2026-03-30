@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://baimfxo4t3pfx"]
+
+[ext_resource type="Texture2D" uid="uid://ch3wdsexmxskf" path="res://assets/Objects/office_chair.PNG.PNG" id="1_8ow36"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_c4y35"]
+
+[node name="StaticBody2D" type="StaticBody2D" unique_id=1567425831]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1936789127]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_8ow36")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=943881113]
+position = Vector2(0, 17)
+scale = Vector2(6, 1)
+shape = SubResource("RectangleShape2D_c4y35")

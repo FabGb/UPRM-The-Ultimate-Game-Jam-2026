@@ -25,6 +25,7 @@ var isDashing = false
 var dashTime = 0
 var dashSpeed = 2.7 * speed
 var dashDir = 0
+var dashDecel = 1000
 
 @onready var player_sprite = $AnimatedSprite2D
 @onready var attackArea = $AttackArea
@@ -69,7 +70,11 @@ func movement(delta):
 
 	if isDashing:
 		dashTime -= 1
-		velocity.x = dashDir * dashSpeed  # assumes you added dashDir fix
+
+		velocity.x = move_toward(velocity.x, 0, dashDecel * delta)
+
+		if abs(velocity.x) < 50:
+			velocity.x = 0
 
 		if dashTime <= 0:
 			isDashing = false
