@@ -44,7 +44,6 @@ scale = Vector2(15, 15)
 [node name="Router" parent="." unique_id=2080919676 instance=ExtResource("4_v54kn")]
 position = Vector2(8498, -908)
 scale = Vector2(1.2, 1.2)
-script = null
 
 [node name="Window" parent="." unique_id=984352410 instance=ExtResource("4_v1s4q")]
 position = Vector2(7334, -1320)
