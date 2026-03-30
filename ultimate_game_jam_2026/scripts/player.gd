@@ -4,7 +4,7 @@ extends CharacterBody2D
 var speed = 390.0
 var accel = speed
 var decel = 3 * speed
-var jumpVelocity = -700.0
+var jumpVelocity = -900.0
 var health = 100
 var attack = 15
 var gotPhonePowerUp = false
@@ -38,20 +38,21 @@ func sign(num: float) -> int:
 
 #--------BUILT-IN FUNCTIONS--------#
 func _ready() -> void:
+	await add_to_group("Player")
 	$AttackArea.scale = Vector2(1, 1)
 	$AttackArea/CollisionShape2D.scale = Vector2(1, 1)
 
 	var shape = CircleShape2D.new()
-	shape.radius = 10
+	shape.radius = 35
 	$AttackArea/CollisionShape2D.shape = shape
 
-	add_to_group("Player")
 	attackArea.get_node("CollisionShape2D").disabled = true
 
 func _physics_process(delta: float) -> void:
 	movement(delta)
 	powerUpCollisions()
-	
+	animate()
+
 	if iFrames > 0:
 		iFrames -= 1
 
@@ -75,7 +76,7 @@ func movement(delta):
 
 		move_and_slide()
 		return
-		
+
 	if knockbackTime > 0:
 		knockbackTime -= 1
 
@@ -87,6 +88,13 @@ func movement(delta):
 		velocity.y = jumpVelocity
 
 	var direction := Input.get_axis("ui_left", "ui_right")
+	if direction > 0:
+		facingRight = true
+		facingLeft = false
+	elif direction < 0:
+		facingRight = false
+		facingLeft = true
+
 	if direction != 0:
 		var target_speed = speed * direction
 
@@ -125,7 +133,7 @@ func movement(delta):
 			velocity.x = dashDir * dashSpeed
 
 	if knockback:
-		velocity = Vector2(-sign(velocity.x) * 20, -100)
+		velocity = Vector2(-sign(velocity.x) * speed, -speed)
 		knockback = false
 		knockbackTime = 10
 
@@ -144,6 +152,16 @@ func flip_player():
 	elif velocity.x > 0:
 		player_sprite.flip_h = false
 		camera.offset.x = lerp(camera.offset.x,45.0,0.05)
+
+func animate() -> void:
+	if hasPhone:
+		$AnimatedSprite2D.play("PhoneMode")
+	elif velocity.y < 0:
+		$AnimatedSprite2D.play("Jumping")
+	elif velocity.y > 0:
+		$AnimatedSprite2D.play("Landing")
+	else:
+		$AnimatedSprite2D.play("Walk")
 
 func camera_control():
 	var cam_direction = Input.get_axis("Cam_Up","Cam_D")
@@ -172,28 +190,29 @@ func powerUpCollisions() -> void:
 		$AttackArea/CollisionShape2D.scale = Vector2(1, 1)
 
 		var shape = CircleShape2D.new()
-		shape.radius = 10
+		shape.radius = 35
 		$AttackArea/CollisionShape2D.shape = shape
+		attackArea.position = Vector2(0, 0)
 		scale = Vector2(1, 1)
 		force = Vector2(1, 1)
 		attack = 15
-		speed = 100
+		speed = 390
 		accel = speed
 		decel = 3 * speed
 		hasPhone = false
 
 	if gotPhonePowerUp:
-		$AttackArea.scale = Vector2(1, 2)
+		$AttackArea.scale = Vector2(2, 2)
 		$AttackArea/CollisionShape2D.scale = Vector2(1, 2)
 
 		var shape = RectangleShape2D.new()
-		shape.size = Vector2(10, 8)
+		shape.size = Vector2(125, 20)
 		$AttackArea/CollisionShape2D.shape = shape
 
 		scale = Vector2(1, 2)
 		force = Vector2(1, 1)
 
-		attack = 30
+		attack = 10
 		gotPhonePowerUp = false
 		hasPhone = true
 		hasCar = false 		# override power up if collected
@@ -218,11 +237,10 @@ func powerUpCollisions() -> void:
 		hasCar = true
 
 func phoneAttack() -> void:
-	var size = ($CollisionShape2D.shape as CircleShape2D).radius
-	var offset = Vector2(2 * size, -size)
+	var offset = Vector2(125, 0)
 
 	if facingLeft:
-		offset.x = -offset.x
+		offset.x *= -1
 
 	attackArea.position = offset
 
