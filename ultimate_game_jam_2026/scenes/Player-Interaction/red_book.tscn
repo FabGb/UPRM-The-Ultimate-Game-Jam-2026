@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://enfst5441bwv"]
+
+[ext_resource type="Texture2D" uid="uid://cbg8aaqeh8e38" path="res://assets/Objects/red_book.PNG" id="1_xhhh5"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cv6oe"]
+size = Vector2(20, 101)
+
+[node name="Red Book" type="StaticBody2D" unique_id=583707597]
+
+[node name="RedBook" type="Sprite2D" parent="." unique_id=1166176553]
+position = Vector2(0, -2)
+texture = ExtResource("1_xhhh5")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=207503771]
+position = Vector2(0, -1.5)
+shape = SubResource("RectangleShape2D_cv6oe")

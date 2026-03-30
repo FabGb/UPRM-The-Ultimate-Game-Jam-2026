@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://bca6blvcy3qg"]
+
+[ext_resource type="Script" uid="uid://bwwhn27spr57g" path="res://scripts/car_power_up.gd" id="1_oyggu"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_oyggu"]
+
+[node name="CarPowerUp" type="Area2D" unique_id=1647981530]
+collision_layer = 16
+collision_mask = 16
+script = ExtResource("1_oyggu")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=817186384]
+shape = SubResource("RectangleShape2D_oyggu")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
