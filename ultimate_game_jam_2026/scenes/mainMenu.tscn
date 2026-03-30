@@ -3,14 +3,8 @@
 [ext_resource type="Script" uid="uid://qq1oqk1nqhpg" path="res://scenes/main_menu.gd" id="1_48ign"]
 [ext_resource type="Texture2D" uid="uid://7j1m228267d3" path="res://assets/SplashScreen.png" id="1_qkhwq"]
 [ext_resource type="Theme" uid="uid://lh5rum8x22ba" path="res://Resources/Ampy_theme.tres" id="2_3d1i7"]
-[ext_resource type="Texture2D" uid="uid://cq7k2a0efbar8" path="res://Resources/icons/PowerIcon.png" id="4_l7wge"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_3d1i7"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_7nrmo"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_clbkb"]
-bg_color = Color(0.75398386, 0.75398386, 0.75398374, 1)
 
 [node name="Control" type="Control" unique_id=654551932]
 layout_mode = 3
@@ -20,7 +14,6 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_48ign")
-change_scene = "uid://bpb0bvq75wy3d"
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1982343426]
 
@@ -73,30 +66,10 @@ text = "Ampy"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="playBtn" type="Button" parent="CanvasLayer/GridContainer" unique_id=417504634]
+[node name="Button" type="Button" parent="CanvasLayer/GridContainer" unique_id=417504634]
 layout_mode = 2
 size_flags_horizontal = 4
 theme = ExtResource("2_3d1i7")
 text = "     PLAY     "
 
-[node name="quitBtn" type="Button" parent="CanvasLayer" unique_id=1325200932]
-anchors_preset = 3
-anchor_left = 1.0
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -66.0
-offset_top = -66.0
-offset_right = 192.0
-offset_bottom = 192.0
-grow_horizontal = 0
-grow_vertical = 0
-scale = Vector2(0.25, 0.25)
-theme_override_styles/normal = SubResource("StyleBoxEmpty_7nrmo")
-theme_override_styles/hover = SubResource("StyleBoxFlat_clbkb")
-icon = ExtResource("4_l7wge")
-
-[connection signal="pressed" from="CanvasLayer/GridContainer/playBtn" to="." method="_on_play_button_pressed"]
-[connection signal="pressed" from="CanvasLayer/GridContainer/playBtn" to="." method="_on_button_pressed"]
-[connection signal="pressed" from="CanvasLayer/GridContainer/playBtn" to="." method="_on_play_btn_pressed"]
-[connection signal="pressed" from="CanvasLayer/quitBtn" to="." method="_on_quit_btn_pressed"]
+[connection signal="pressed" from="CanvasLayer/GridContainer/Button" to="." method="_on_button_pressed"]
