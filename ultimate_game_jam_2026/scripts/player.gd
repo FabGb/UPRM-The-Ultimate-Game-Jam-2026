@@ -140,7 +140,7 @@ func flip_player():
 	
 	if velocity.x < 0:
 		player_sprite.flip_h = true
-		camera.offset.x = lerp(camera.offset.x,-50.0,0.05)
+		camera.offset.x = lerp(camera.offset.x,-75.0,0.05)
 	elif velocity.x > 0:
 		player_sprite.flip_h = false
 		camera.offset.x = lerp(camera.offset.x,50.0,0.05)

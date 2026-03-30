@@ -120,7 +120,7 @@ animation = &"Walk"
 autoplay = "Walk"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1678300432]
-position = Vector2(-17, 10)
+position = Vector2(-12, 4)
 scale = Vector2(1.5, 1.5)
 shape = SubResource("CircleShape2D_g2els")
 

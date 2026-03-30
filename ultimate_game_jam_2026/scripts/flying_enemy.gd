@@ -69,4 +69,5 @@ func _on_killable_area_entered(area: Area2D) -> void:
 
 
 func _on_killable_body_entered(body: Node2D) -> void:
-	playerRef.takeDamage(attack)
+	if body.is_in_group("Player"):
+		playerRef.takeDamage(attack)

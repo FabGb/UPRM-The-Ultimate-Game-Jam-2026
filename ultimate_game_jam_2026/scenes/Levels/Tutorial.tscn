@@ -8,23 +8,23 @@
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_v54kn"]
 load_path = "res://.godot/imported/Floor.png-1986a68a011c9d9847f815defae65829.ctex"
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_swl8n"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_v54kn"]
 texture = SubResource("CompressedTexture2D_v54kn")
 0:0/0 = 0
 0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 
 [sub_resource type="TileSet" id="TileSet_wco3g"]
 physics_layer_0/collision_layer = 1
-sources/0 = SubResource("TileSetAtlasSource_swl8n")
-
-[sub_resource type="LabelSettings" id="LabelSettings_wco3g"]
-font_size = 50
-font_color = Color(0.105643965, 0.06989858, 0.018451989, 1)
+sources/0 = SubResource("TileSetAtlasSource_v54kn")
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_wco3g"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wco3g"]
 size = Vector2(20, 21)
+
+[sub_resource type="LabelSettings" id="LabelSettings_wco3g"]
+font_size = 50
+font_color = Color(0.105643965, 0.06989858, 0.018451989, 1)
 
 [node name="Tutorial" type="Node2D" unique_id=1675367804]
 
@@ -57,30 +57,10 @@ drag_bottom_margin = 0.0
 editor_draw_limits = true
 editor_draw_drag_margin = true
 
-[node name="Game UI" type="Control" parent="." unique_id=143686574]
-visible = false
-layout_mode = 3
-anchors_preset = 0
-offset_left = 21.0
-offset_top = -4870.0
-offset_right = 8662.0
-offset_bottom = 176.0
-
-[node name="Tut-text1" type="Label" parent="Game UI" unique_id=1585030357]
-layout_mode = 0
-offset_left = 186.0
-offset_top = 4285.0
-offset_right = 1084.0
-offset_bottom = 4487.0
-text = "Hi and welcome to Ampy's adventure
-Use the D-pad to move "
-label_settings = SubResource("LabelSettings_wco3g")
-
 [node name="Router" parent="." unique_id=2080919676 instance=ExtResource("4_v54kn")]
 position = Vector2(8531, -802)
 
 [node name="Floor" type="StaticBody2D" parent="." unique_id=122893802]
-visible = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Floor" unique_id=1770340555]
 position = Vector2(132, -201)
@@ -104,3 +84,22 @@ shape = SubResource("RectangleShape2D_wco3g")
 [node name="Side Table" parent="." unique_id=1179846826 instance=ExtResource("4_pt3nr")]
 position = Vector2(8449.001, -404.00003)
 scale = Vector2(10, 10)
+
+[node name="Game UI" type="Control" parent="." unique_id=143686574]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_left = 21.0
+offset_top = -4870.0
+offset_right = 8662.0
+offset_bottom = 176.0
+
+[node name="Tut-text1" type="Label" parent="Game UI" unique_id=1585030357]
+layout_mode = 0
+offset_left = 186.0
+offset_top = 4285.0
+offset_right = 1084.0
+offset_bottom = 4487.0
+text = "Hi and welcome to Ampy's adventure
+Use the D-pad to move "
+label_settings = SubResource("LabelSettings_wco3g")
