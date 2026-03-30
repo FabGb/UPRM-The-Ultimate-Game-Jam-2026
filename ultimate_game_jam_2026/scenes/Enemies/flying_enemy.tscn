@@ -2,30 +2,79 @@
 
 [ext_resource type="Script" uid="uid://dbihk3p2ieqi" path="res://scripts/flying_enemy.gd" id="1_fgwew"]
 [ext_resource type="PackedScene" uid="uid://bb60hq4rch02s" path="res://scenes/Enemies/killable.tscn" id="1_vbcm2"]
-[ext_resource type="Texture2D" uid="uid://bfv1xt58a38vn" path="res://assets/ab4341e25cb940339775fbb406797cd4.png" id="2_3iws5"]
+[ext_resource type="Texture2D" uid="uid://kx380lo0rjin" path="res://assets/FlyEnemy/FlyEnemy_001.png" id="2_qpfju"]
+[ext_resource type="Texture2D" uid="uid://qt756n37xaay" path="res://assets/FlyEnemy/FlyEnemy_002.png" id="3_l0j0e"]
+[ext_resource type="Texture2D" uid="uid://ca4ojdcktvdt" path="res://assets/FlyEnemy/FlyEnemy_003.png" id="4_accch"]
+[ext_resource type="Texture2D" uid="uid://bwdxq20rg2wvw" path="res://assets/FlyEnemy/FlyEnemy_004.png" id="5_jppw1"]
+[ext_resource type="Texture2D" uid="uid://drk0xdyfrmqct" path="res://assets/FlyEnemy/FlyEnemy_005.png" id="6_7nano"]
+[ext_resource type="Texture2D" uid="uid://byp2pefbwjbyi" path="res://assets/FlyEnemy/FlyEnemy_006.png" id="7_palrc"]
+[ext_resource type="Texture2D" uid="uid://cqua8ony3pu8h" path="res://assets/FlyEnemy/FlyEnemy_007.png" id="8_ac20d"]
+[ext_resource type="Texture2D" uid="uid://5cdcigvnwv3a" path="res://assets/FlyEnemy/FlyEnemy_008.png" id="9_43x3b"]
+[ext_resource type="Texture2D" uid="uid://daxufgduma5bu" path="res://assets/FlyEnemy/FlyEnemy_009.png" id="10_fd0lf"]
+[ext_resource type="Texture2D" uid="uid://d2wgbyl2vog03" path="res://assets/FlyEnemy/FlyEnemy_010.png" id="11_knbm5"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_fgwew"]
-size = Vector2(5.25, 5.25)
+[sub_resource type="SpriteFrames" id="SpriteFrames_mrtfj"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_qpfju")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_l0j0e")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_accch")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_jppw1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_7nano")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_palrc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_ac20d")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_43x3b")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_fd0lf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_knbm5")
+}],
+"loop": true,
+"name": &"Idle",
+"speed": 5.0
+}]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_c4a5w"]
-size = Vector2(4.5, 4.5)
+[sub_resource type="CircleShape2D" id="CircleShape2D_edwbq"]
+radius = 3.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_xi1fs"]
+radius = 3.0
 
 [node name="FlyingEnemy" type="CharacterBody2D" unique_id=834859223]
 collision_layer = 2
 script = ExtResource("1_fgwew")
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1851448758]
-scale = Vector2(0.0079999985, 0.008000008)
-texture = ExtResource("2_3iws5")
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1458703458]
+scale = Vector2(0.005, 0.005)
+sprite_frames = SubResource("SpriteFrames_mrtfj")
+animation = &"Idle"
+autoplay = "Idle"
 
 [node name="Killable" parent="." unique_id=201793127 instance=ExtResource("1_vbcm2")]
 collision_layer = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Killable" unique_id=416438406]
-shape = SubResource("RectangleShape2D_fgwew")
+shape = SubResource("CircleShape2D_edwbq")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1629217984]
-shape = SubResource("RectangleShape2D_c4a5w")
+shape = SubResource("CircleShape2D_xi1fs")
 
 [connection signal="area_entered" from="Killable" to="." method="_on_killable_area_entered"]
 [connection signal="body_entered" from="Killable" to="." method="_on_killable_body_entered"]

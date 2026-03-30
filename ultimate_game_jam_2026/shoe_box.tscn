@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://drmhs18jmn5tu"]
+
+[ext_resource type="Texture2D" uid="uid://fnx70by1ka8o" path="res://assets/Objects/legally_distinct_shoebox.PNG" id="1_2q3hy"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3ui1w"]
+size = Vector2(244, 130)
+
+[node name="Shoe box" type="StaticBody2D" unique_id=1316782146]
+
+[node name="LegallyDistinctShoebox" type="Sprite2D" parent="." unique_id=288408766]
+position = Vector2(66, -13)
+texture = ExtResource("1_2q3hy")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1040557972]
+position = Vector2(68, -11)
+shape = SubResource("RectangleShape2D_3ui1w")

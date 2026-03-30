@@ -1,12 +1,12 @@
 extends CharacterBody2D
 
-var speed = 25.0
-var health = 50
+var speed = 300.0
+var health = 30
 var attack = 10
 var playerRef
 var baseXDirection = -1
 var baseYDirection = -1
-var xDirectionTimer = 120
+var xDirectionTimer = 90
 var yDirectionTimer = 20
 
 var knockback = false
@@ -16,6 +16,7 @@ var angle = 0
 
 func getDistance(target: Vector2) -> float:
 	return sqrt(pow(target.x - position.x, 2) + pow(target.y - position.y, 2))
+	health += ceil(($CollisionShape2D.shape as CircleShape2D).radius) * 4
 
 func sign(num: float) -> int:
 	if num >= 0:
@@ -30,13 +31,18 @@ func _physics_process(delta: float) -> void:
 	if health <= 0:
 		queue_free()
 
+	if knockback:
+		velocity = Vector2(-sign(velocity.x) * speed * playerRef.force.x, -speed * playerRef.force.y)
+		knockback = false
+		knockbackTime = 10
+
 	if knockbackTime > 0:
 		knockbackTime -= 1
-		$Sprite2D.modulate = Color(1, 0, 0)
+		$AnimatedSprite2D.modulate = Color(1, 0, 0)
 
 	else:
-		$Sprite2D.modulate = Color(1, 1, 1)
-		if getDistance(playerRef.position) < 50:
+		$AnimatedSprite2D.modulate = Color(1, 1, 1)
+		if getDistance(playerRef.position) < 500:
 			angle = atan2(playerRef.position.y - position.y, playerRef.position.x - position.x)
 			velocity.x = speed * cos(angle)
 			velocity.y = speed * sin(angle)
@@ -52,12 +58,6 @@ func _physics_process(delta: float) -> void:
 			if yDirectionTimer <= 0:
 				yDirectionTimer = 20
 				baseYDirection *= -1
-			
-			if knockback:
-				velocity = Vector2(-sign(velocity.x) * speed * playerRef.force.x, -speed * playerRef.force.y)
-				knockback = false
-				knockbackTime = 10
-
 
 	var collision = move_and_collide(velocity * delta)
 	if collision:
@@ -66,7 +66,6 @@ func _physics_process(delta: float) -> void:
 func _on_killable_area_entered(area: Area2D) -> void:
 	health -= playerRef.attack
 	knockback = true
-
 
 func _on_killable_body_entered(body: Node2D) -> void:
 	if body.is_in_group("Player"):

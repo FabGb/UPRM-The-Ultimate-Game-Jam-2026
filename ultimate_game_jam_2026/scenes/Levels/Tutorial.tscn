@@ -1,21 +1,29 @@
-[gd_scene format=3 uid="uid://bpb0bvq75wy3d"]
+[gd_scene format=3 uid="uid://dd70w6fnyxcp6"]
 
 [ext_resource type="Texture2D" uid="uid://2ueb84v0ohbj" path="res://assets/Backgrounds/purple_wallpaper.PNG" id="1_wco3g"]
 [ext_resource type="PackedScene" uid="uid://v4gh4tjacqmn" path="res://scenes/Player-Interaction/player.tscn" id="3_v54kn"]
 [ext_resource type="PackedScene" uid="uid://cs1kg7l7g0kfn" path="res://scenes/Player-Interaction/side_table.tscn" id="4_pt3nr"]
+[ext_resource type="PackedScene" uid="uid://c45d1jfsqvpmh" path="res://scenes/Player-Interaction/window.tscn" id="4_v1s4q"]
 [ext_resource type="PackedScene" uid="uid://bkhklqmabhrm2" path="res://scenes/Player-Interaction/router.tscn" id="4_v54kn"]
+[ext_resource type="PackedScene" uid="uid://w1h245pqx0gx" path="res://scenes/Player-Interaction/power_outlet.tscn" id="5_okfd3"]
+[ext_resource type="PackedScene" uid="uid://cgmdrny0vnmt3" path="res://scenes/Player-Interaction/blue_book.tscn" id="5_pt3nr"]
+[ext_resource type="PackedScene" uid="uid://cybc1nakgp71v" path="res://scenes/Player-Interaction/couch.tscn" id="7_okfd3"]
+[ext_resource type="PackedScene" uid="uid://enfst5441bwv" path="res://scenes/Player-Interaction/red_book.tscn" id="9_dswxo"]
+[ext_resource type="PackedScene" uid="uid://drmhs18jmn5tu" path="res://shoe_box.tscn" id="9_wqb03"]
+[ext_resource type="PackedScene" uid="uid://bxlgmoiwuwfbg" path="res://scenes/Player-Interaction/area_2d.tscn" id="10_wqb03"]
+[ext_resource type="PackedScene" uid="uid://c75i2j3wb1peg" path="res://scenes/Player-Interaction/shelf.tscn" id="11_mkn7c"]
 
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_v54kn"]
-load_path = "res://.godot/imported/Floor.png-1986a68a011c9d9847f815defae65829.ctex"
+[sub_resource type="LabelSettings" id="LabelSettings_wco3g"]
+font_size = 50
+font_color = Color(0.105643965, 0.06989858, 0.018451989, 1)
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_v54kn"]
-texture = SubResource("CompressedTexture2D_v54kn")
-0:0/0 = 0
-0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+[sub_resource type="LabelSettings" id="LabelSettings_wqb03"]
+font_size = 50
+font_color = Color(0, 0, 0, 1)
 
-[sub_resource type="TileSet" id="TileSet_wco3g"]
-physics_layer_0/collision_layer = 1
-sources/0 = SubResource("TileSetAtlasSource_v54kn")
+[sub_resource type="LabelSettings" id="LabelSettings_251ly"]
+font_size = 50
+font_color = Color(0, 0, 0, 1)
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_wco3g"]
 
@@ -29,20 +37,88 @@ font_color = Color(0.105643965, 0.06989858, 0.018451989, 1)
 [node name="Tutorial" type="Node2D" unique_id=1675367804]
 
 [node name="Background" type="Sprite2D" parent="." unique_id=1144685297]
-position = Vector2(4357.5, -1977)
-scale = Vector2(6.7117186, 5.7194443)
+position = Vector2(4313.9995, -1977)
+scale = Vector2(6.779687, 5.7194443)
 texture = ExtResource("1_wco3g")
 
-[node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=891162649]
-tile_set = SubResource("TileSet_wco3g")
+[node name="Side Table" parent="." unique_id=1179846826 instance=ExtResource("4_pt3nr")]
+position = Vector2(8356, -330)
+scale = Vector2(15, 15)
+
+[node name="Router" parent="." unique_id=2080919676 instance=ExtResource("4_v54kn")]
+position = Vector2(8498, -908)
+scale = Vector2(1.2, 1.2)
+
+[node name="Window" parent="." unique_id=984352410 instance=ExtResource("4_v1s4q")]
+position = Vector2(7334, -1320)
+scale = Vector2(2, 2)
+
+[node name="Power Outlet" parent="." unique_id=1858107069 instance=ExtResource("5_okfd3")]
+position = Vector2(239, -457)
+rotation = 1.5707964
+
+[node name="Couch" parent="." unique_id=1678074635 instance=ExtResource("7_okfd3")]
+position = Vector2(3628, -592.00006)
+scale = Vector2(2.5, 2.5)
+
+[node name="Blue Book" parent="." unique_id=22588412 instance=ExtResource("5_pt3nr")]
+position = Vector2(8227, -832)
+rotation = -1.5707964
+scale = Vector2(2, 2)
+
+[node name="Clock" parent="." unique_id=61810604 instance=ExtResource("10_wqb03")]
+position = Vector2(1846, -1423.0001)
+scale = Vector2(2.5, 2.5)
+
+[node name="Shoe box" parent="." unique_id=1316782146 instance=ExtResource("9_wqb03")]
+position = Vector2(2405, -213)
+scale = Vector2(1.3, 1.3)
+
+[node name="Blue Book2" parent="." unique_id=1813777112 instance=ExtResource("5_pt3nr")]
+position = Vector2(2567, -339)
+rotation = -1.5707964
+scale = Vector2(2, 2)
+
+[node name="Blue Book3" parent="." unique_id=1755889034 instance=ExtResource("5_pt3nr")]
+position = Vector2(2569, -377)
+rotation = -1.5707964
+scale = Vector2(2, 2)
+
+[node name="Blue Book4" parent="." unique_id=1075673210 instance=ExtResource("5_pt3nr")]
+position = Vector2(2567, -412)
+rotation = -1.5707964
+scale = Vector2(2, 2)
+
+[node name="Blue Book5" parent="." unique_id=429719772 instance=ExtResource("5_pt3nr")]
+position = Vector2(2605, -524.99994)
+rotation = -2.347468
+scale = Vector2(2, 2)
+
+[node name="Side Table2" parent="." unique_id=1911265545 instance=ExtResource("4_pt3nr")]
+position = Vector2(4940, -330)
+scale = Vector2(15, 15)
+
+[node name="Shelf" parent="." unique_id=652424577 instance=ExtResource("11_mkn7c")]
+position = Vector2(6145.0005, -893.00006)
+scale = Vector2(2.5, 2.5)
+
+[node name="Red Book" parent="." unique_id=583707597 instance=ExtResource("9_dswxo")]
+position = Vector2(5122, -836)
+rotation = 1.5707964
+scale = Vector2(2, 2)
+
+[node name="Red Book2" parent="." unique_id=731843460 instance=ExtResource("9_dswxo")]
+position = Vector2(5141, -873)
+rotation = 1.5707964
+scale = Vector2(2, 2)
 
 [node name="Player" parent="." unique_id=578981327 instance=ExtResource("3_v54kn")]
-position = Vector2(158, -265)
+position = Vector2(302, -380)
 
 [node name="Camera2D" type="Camera2D" parent="Player" unique_id=448429061]
-position = Vector2(0, -275)
+position = Vector2(125, -250)
 process_callback = 0
-limit_left = 82
+limit_left = 90
 limit_top = -21312
 limit_right = 8640
 limit_bottom = 9978778
@@ -57,8 +133,40 @@ drag_bottom_margin = 0.0
 editor_draw_limits = true
 editor_draw_drag_margin = true
 
-[node name="Router" parent="." unique_id=2080919676 instance=ExtResource("4_v54kn")]
-position = Vector2(8531, -802)
+[node name="Game UI" type="Control" parent="." unique_id=143686574]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 595.0
+offset_top = -4857.0
+offset_right = 9236.0
+offset_bottom = 189.0
+
+[node name="Tut-text1" type="Label" parent="Game UI" unique_id=1585030357]
+layout_mode = 0
+offset_left = -276.0
+offset_top = 4344.0
+offset_right = 622.0
+offset_bottom = 4546.0
+text = "Use the D-pad to move! "
+label_settings = SubResource("LabelSettings_wco3g")
+
+[node name="Jump" type="Label" parent="Game UI" unique_id=1390986433]
+layout_mode = 0
+offset_left = 1197.0
+offset_top = 4323.0
+offset_right = 1587.0
+offset_bottom = 4392.0
+text = "Press A to jump!"
+label_settings = SubResource("LabelSettings_wqb03")
+
+[node name="Dash" type="Label" parent="Game UI" unique_id=1668763529]
+layout_mode = 0
+offset_left = 4534.0
+offset_top = 3787.0
+offset_right = 5080.0
+offset_bottom = 3856.0
+text = "Use LB to Dash Across!"
+label_settings = SubResource("LabelSettings_251ly")
 
 [node name="Floor" type="StaticBody2D" parent="." unique_id=122893802]
 
@@ -67,10 +175,9 @@ position = Vector2(132, -201)
 shape = SubResource("WorldBoundaryShape2D_wco3g")
 
 [node name="Wall" type="StaticBody2D" parent="." unique_id=149730127]
-visible = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Wall" unique_id=235859704]
-position = Vector2(0, -0.5)
+position = Vector2(37, -13.999999)
 scale = Vector2(5, 400)
 shape = SubResource("RectangleShape2D_wco3g")
 
@@ -81,25 +188,66 @@ position = Vector2(8698, -304)
 scale = Vector2(5, 400)
 shape = SubResource("RectangleShape2D_wco3g")
 
-[node name="Side Table" parent="." unique_id=1179846826 instance=ExtResource("4_pt3nr")]
-position = Vector2(8449.001, -404.00003)
-scale = Vector2(10, 10)
+[node name="Red Book3" parent="." unique_id=265503742 instance=ExtResource("9_dswxo")]
+position = Vector2(5298, -299)
+scale = Vector2(2, 2)
 
-[node name="Game UI" type="Control" parent="." unique_id=143686574]
-visible = false
-layout_mode = 3
-anchors_preset = 0
-offset_left = 21.0
-offset_top = -4870.0
-offset_right = 8662.0
-offset_bottom = 176.0
+[node name="Red Book4" parent="." unique_id=767539113 instance=ExtResource("9_dswxo")]
+position = Vector2(5298, -496)
+scale = Vector2(2, 2)
 
-[node name="Tut-text1" type="Label" parent="Game UI" unique_id=1585030357]
-layout_mode = 0
-offset_left = 186.0
-offset_top = 4285.0
-offset_right = 1084.0
-offset_bottom = 4487.0
-text = "Hi and welcome to Ampy's adventure
-Use the D-pad to move "
-label_settings = SubResource("LabelSettings_wco3g")
+[node name="Red Book5" parent="." unique_id=1344557380 instance=ExtResource("9_dswxo")]
+position = Vector2(5298, -696)
+scale = Vector2(2, 2)
+
+[node name="Red Book6" parent="." unique_id=1157543954 instance=ExtResource("9_dswxo")]
+position = Vector2(5475, -357)
+scale = Vector2(2, 2)
+
+[node name="Red Book7" parent="." unique_id=1860601917 instance=ExtResource("9_dswxo")]
+position = Vector2(5476, -554)
+scale = Vector2(2, 2)
+
+[node name="Red Book8" parent="." unique_id=2122137950 instance=ExtResource("9_dswxo")]
+position = Vector2(5562, -245)
+scale = Vector2(2, 2)
+
+[node name="Red Book9" parent="." unique_id=1610972718 instance=ExtResource("9_dswxo")]
+position = Vector2(5561, -449)
+scale = Vector2(2, 2)
+
+[node name="Red Book10" parent="." unique_id=28581478 instance=ExtResource("9_dswxo")]
+position = Vector2(5382, -636)
+scale = Vector2(2, 2)
+
+[node name="Red Book11" parent="." unique_id=33722912 instance=ExtResource("9_dswxo")]
+position = Vector2(5383, -432)
+scale = Vector2(2, 2)
+
+[node name="Red Book12" parent="." unique_id=1445262346 instance=ExtResource("9_dswxo")]
+position = Vector2(5650, -360)
+scale = Vector2(2, 2)
+
+[node name="Red Book13" parent="." unique_id=308023653 instance=ExtResource("9_dswxo")]
+position = Vector2(5730, -231)
+scale = Vector2(2, 2)
+
+[node name="Red Book14" parent="." unique_id=1327577518 instance=ExtResource("9_dswxo")]
+position = Vector2(5650, -161)
+scale = Vector2(2, 2)
+
+[node name="Red Book15" parent="." unique_id=2021132901 instance=ExtResource("9_dswxo")]
+position = Vector2(5383, -231)
+scale = Vector2(2, 2)
+
+[node name="Red Book16" parent="." unique_id=982111162 instance=ExtResource("9_dswxo")]
+position = Vector2(5477, -160)
+scale = Vector2(2, 2)
+
+[node name="Red Book17" parent="." unique_id=613858166 instance=ExtResource("9_dswxo")]
+position = Vector2(5297, -143)
+scale = Vector2(2, 2)
+
+[node name="Red Book18" parent="." unique_id=1489323340 instance=ExtResource("9_dswxo")]
+position = Vector2(5822, -163)
+scale = Vector2(2, 2)
