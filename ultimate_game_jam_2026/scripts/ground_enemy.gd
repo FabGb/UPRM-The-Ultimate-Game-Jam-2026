@@ -5,7 +5,7 @@ var health = 40
 var attack = 15
 var playerRef
 var direction = -1
-var directionTimer = 90
+var directionTimer = 60
 
 var knockback = false
 var knockbackTime = 0
@@ -34,7 +34,7 @@ func _physics_process(delta: float) -> void:
 
 	else:
 		$AnimatedSprite2D.modulate = Color(1, 1, 1)
-		if abs(playerRef.position.x - position.x) < 500:
+		if abs(playerRef.position.x - position.x) < 500 and abs(playerRef.position.y - position.y) < 30:
 			direction = sign(playerRef.position.x - position.x)
 		else:
 			directionTimer -= 1

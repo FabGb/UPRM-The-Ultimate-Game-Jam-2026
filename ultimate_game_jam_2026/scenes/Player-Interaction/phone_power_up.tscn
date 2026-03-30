@@ -1,8 +1,57 @@
 [gd_scene format=3 uid="uid://cap4sae5plgfy"]
 
 [ext_resource type="Script" uid="uid://bkjjjba6tv8fu" path="res://scripts/phone_power_up.gd" id="1_7rdqo"]
+[ext_resource type="Texture2D" uid="uid://vi606oop1uii" path="res://assets/Phone/Unnamed_001.png" id="2_5jawa"]
+[ext_resource type="Texture2D" uid="uid://d521f0gfvl1n" path="res://assets/Phone/Unnamed_002.png" id="3_ytq15"]
+[ext_resource type="Texture2D" uid="uid://betjxdsc448cq" path="res://assets/Phone/Unnamed_003.png" id="4_2qnyv"]
+[ext_resource type="Texture2D" uid="uid://ky5fi1am1nju" path="res://assets/Phone/Unnamed_004.png" id="5_i8vwk"]
+[ext_resource type="Texture2D" uid="uid://p0jf2y583w20" path="res://assets/Phone/Unnamed_005.png" id="6_4ypsh"]
+[ext_resource type="Texture2D" uid="uid://cy1kb726r04pi" path="res://assets/Phone/Unnamed_006.png" id="7_ew36f"]
+[ext_resource type="Texture2D" uid="uid://ctmw147agn3t7" path="res://assets/Phone/Unnamed_007.png" id="8_87i5x"]
+[ext_resource type="Texture2D" uid="uid://dujcbywruwhiu" path="res://assets/Phone/Unnamed_008.png" id="9_1mgtc"]
+[ext_resource type="Texture2D" uid="uid://b0du7yywti3pr" path="res://assets/Phone/Unnamed_009.png" id="10_a63e2"]
+[ext_resource type="Texture2D" uid="uid://b6xfrugsgagbt" path="res://assets/Phone/Unnamed_010.png" id="11_372m1"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7rdqo"]
+size = Vector2(285, 1046)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_y2u1b"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_5jawa")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_ytq15")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_2qnyv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_i8vwk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_4ypsh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_ew36f")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_87i5x")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_1mgtc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_a63e2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_372m1")
+}],
+"loop": true,
+"name": &"default",
+"speed": 18.0
+}]
 
 [node name="PhonePowerUp" type="Area2D" unique_id=1813305990]
 collision_layer = 16
@@ -10,6 +59,12 @@ collision_mask = 16
 script = ExtResource("1_7rdqo")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1188344007]
+position = Vector2(-12.5, -1)
 shape = SubResource("RectangleShape2D_7rdqo")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=551509595]
+sprite_frames = SubResource("SpriteFrames_y2u1b")
+autoplay = "default"
+frame_progress = 0.43665603
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

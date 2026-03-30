@@ -7,16 +7,17 @@
 [ext_resource type="PackedScene" uid="uid://cgmdrny0vnmt3" path="res://scenes/Player-Interaction/blue_book.tscn" id="5_l5ivm"]
 [ext_resource type="PackedScene" uid="uid://enfst5441bwv" path="res://scenes/Player-Interaction/red_book.tscn" id="6_xxpsm"]
 [ext_resource type="Texture2D" uid="uid://h0c4nwc7k5og" path="res://assets/Objects/clock.png" id="7_xxpsm"]
-[ext_resource type="PackedScene" uid="uid://cybc1nakgp71v" path="res://scenes/Player-Interaction/couch.tscn" id="7_y368g"]
 [ext_resource type="PackedScene" uid="uid://bkhklqmabhrm2" path="res://scenes/Player-Interaction/router.tscn" id="8_4p1o3"]
 [ext_resource type="PackedScene" uid="uid://c75i2j3wb1peg" path="res://scenes/Player-Interaction/shelf.tscn" id="9_j85eu"]
 [ext_resource type="PackedScene" uid="uid://c45d1jfsqvpmh" path="res://scenes/Player-Interaction/window.tscn" id="10_14nfc"]
 [ext_resource type="PackedScene" uid="uid://drnc78s15igyk" path="res://scenes/Player-Interaction/tall_vase.tscn" id="11_ngn3o"]
 [ext_resource type="Texture2D" uid="uid://dh28cmef4uqup" path="res://assets/Objects/henry.PNG" id="12_14nfc"]
 [ext_resource type="PackedScene" uid="uid://paw8w83sck8j" path="res://scenes/Enemies/groundEnemy.tscn" id="12_vtd0g"]
+[ext_resource type="PackedScene" uid="uid://d2rm2qn8hty5u" path="res://scenes/Player-Interaction/desk.tscn" id="13_7u17y"]
 [ext_resource type="PackedScene" uid="uid://c1afsbqgxbie4" path="res://scenes/Enemies/flying_enemy.tscn" id="13_hk2jt"]
 [ext_resource type="PackedScene" uid="uid://cap4sae5plgfy" path="res://scenes/Player-Interaction/phone_power_up.tscn" id="15_vtd0g"]
 [ext_resource type="PackedScene" uid="uid://drmhs18jmn5tu" path="res://scenes/Player-Interaction/shoe_box.tscn" id="17_5gowt"]
+[ext_resource type="PackedScene" uid="uid://baimfxo4t3pfx" path="res://scenes/Player-Interaction/office_chair.tscn" id="19_a60bd"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_hk2jt"]
 radius = 80.50156
@@ -45,27 +46,27 @@ position = Vector2(3918, 255.00003)
 scale = Vector2(10, 10)
 
 [node name="Blue Book" parent="Objects" unique_id=22588412 instance=ExtResource("5_l5ivm")]
-position = Vector2(1258, 372)
+position = Vector2(1168, 377.99997)
 scale = Vector2(2, 2)
 
 [node name="Blue Book2" parent="Objects" unique_id=1526274455 instance=ExtResource("5_l5ivm")]
-position = Vector2(1338, 372)
+position = Vector2(1248, 377.99997)
 scale = Vector2(2, 2)
 
 [node name="Blue Book3" parent="Objects" unique_id=814351276 instance=ExtResource("5_l5ivm")]
-position = Vector2(1298, 372)
+position = Vector2(1208, 377.99997)
 scale = Vector2(1.9999999, 1.9999999)
 
 [node name="Blue Book4" parent="Objects" unique_id=528485870 instance=ExtResource("5_l5ivm")]
-position = Vector2(1380, 372)
+position = Vector2(1290, 377.99997)
 scale = Vector2(2, 2)
 
 [node name="Blue Book5" parent="Objects" unique_id=343979024 instance=ExtResource("5_l5ivm")]
-position = Vector2(1216, 372)
+position = Vector2(1126, 377.99997)
 scale = Vector2(2, 2)
 
 [node name="Red Book" parent="Objects" unique_id=583707597 instance=ExtResource("6_xxpsm")]
-position = Vector2(1113, 378.0001)
+position = Vector2(1023, 384.00006)
 rotation = 0.7853982
 scale = Vector2(1.9999999, 1.9999999)
 
@@ -92,12 +93,12 @@ rotation = -0.7853982
 scale = Vector2(1.9999999, 1.9999999)
 
 [node name="Red Book2" parent="Objects" unique_id=1365294431 instance=ExtResource("6_xxpsm")]
-position = Vector2(1319.0001, 133.00003)
+position = Vector2(1229.0001, 139)
 rotation = 0.7853982
 scale = Vector2(1.9999999, 1.9999999)
 
 [node name="Red Book3" parent="Objects" unique_id=610457493 instance=ExtResource("6_xxpsm")]
-position = Vector2(1295, 234)
+position = Vector2(1205, 239.99997)
 rotation = 1.5707964
 scale = Vector2(2, 2)
 
@@ -250,10 +251,6 @@ scale = Vector2(2, 2)
 position = Vector2(7051, 402)
 rotation = 4.712389
 scale = Vector2(2, 2)
-
-[node name="Couch" parent="Objects" unique_id=1678074635 instance=ExtResource("7_y368g")]
-position = Vector2(2728.0002, 83.99999)
-scale = Vector2(2.5, 2.5)
 
 [node name="StaticBody2D" type="StaticBody2D" parent="Objects" unique_id=726356705]
 position = Vector2(7425, -810)
@@ -491,7 +488,7 @@ rotation = -1.5707964
 scale = Vector2(2, 2)
 
 [node name="TallVase" parent="Objects" unique_id=364686908 instance=ExtResource("11_ngn3o")]
-position = Vector2(1588, 189)
+position = Vector2(1498, 194.99997)
 scale = Vector2(3.5, 3.5)
 
 [node name="Shelf3" parent="Objects" unique_id=475291475 instance=ExtResource("9_j85eu")]
@@ -513,6 +510,30 @@ scale = Vector2(3, 2.5)
 [node name="Shelf5" parent="Objects" unique_id=1074807434 instance=ExtResource("9_j85eu")]
 position = Vector2(4201, -1056)
 scale = Vector2(3, 2.5)
+
+[node name="Shoe box" parent="Objects" unique_id=1316782146 instance=ExtResource("17_5gowt")]
+position = Vector2(7471, 409)
+
+[node name="Shoe box2" parent="Objects" unique_id=424348150 instance=ExtResource("17_5gowt")]
+position = Vector2(7471, 275)
+
+[node name="desk" parent="Objects" unique_id=236137022 instance=ExtResource("13_7u17y")]
+position = Vector2(3003, 118)
+scale = Vector2(3, 3)
+
+[node name="StaticBody2D2" parent="Objects" unique_id=1567425831 instance=ExtResource("19_a60bd")]
+position = Vector2(1986, -8.9999695)
+scale = Vector2(5.5, 5.5)
+
+[node name="Red Book17" parent="Objects" unique_id=972143235 instance=ExtResource("6_xxpsm")]
+position = Vector2(2239, -94)
+rotation = 0.7853982
+scale = Vector2(1.9999998, 1.9999998)
+
+[node name="Red Book19" parent="Objects" unique_id=1279060767 instance=ExtResource("6_xxpsm")]
+position = Vector2(2215, 6.9999695)
+rotation = 1.5707964
+scale = Vector2(2, 2)
 
 [node name="Player" parent="." unique_id=578981327 instance=ExtResource("2_3ydyl")]
 position = Vector2(235, 408)
@@ -538,15 +559,11 @@ editor_draw_limits = true
 editor_draw_drag_margin = true
 
 [node name="GroundEnemy" parent="." unique_id=1661958844 instance=ExtResource("12_vtd0g")]
-position = Vector2(2692, 22.999987)
-scale = Vector2(3.0000002, 3)
-
-[node name="GroundEnemy2" parent="." unique_id=421627648 instance=ExtResource("12_vtd0g")]
-position = Vector2(2874, 22.999987)
+position = Vector2(2874, -375.99997)
 scale = Vector2(3.0000002, 3)
 
 [node name="GroundEnemy3" parent="." unique_id=483753640 instance=ExtResource("12_vtd0g")]
-position = Vector2(3060, 22.999987)
+position = Vector2(3242, -375.99997)
 scale = Vector2(3.0000002, 3)
 
 [node name="GroundEnemy4" parent="." unique_id=2118672875 instance=ExtResource("12_vtd0g")]
@@ -570,11 +587,11 @@ position = Vector2(5336, -513)
 scale = Vector2(10, 10)
 
 [node name="FlyingEnemy" parent="." unique_id=834859223 instance=ExtResource("13_hk2jt")]
-position = Vector2(3494.0002, -198.00002)
+position = Vector2(3666, -552.99994)
 scale = Vector2(10, 10)
 
 [node name="FlyingEnemy2" parent="." unique_id=1296787769 instance=ExtResource("13_hk2jt")]
-position = Vector2(3636.0002, -382.00003)
+position = Vector2(3808, -737)
 scale = Vector2(10, 10)
 
 [node name="FlyingEnemy6" parent="." unique_id=1250944237 instance=ExtResource("13_hk2jt")]
@@ -582,7 +599,7 @@ position = Vector2(4410, -1245)
 scale = Vector2(12, 12)
 
 [node name="FlyingEnemy4" parent="." unique_id=1313672235 instance=ExtResource("13_hk2jt")]
-position = Vector2(4424.0005, -694.00006)
+position = Vector2(4725, -694.00006)
 scale = Vector2(15, 15)
 
 [node name="FlyingEnemy7" parent="." unique_id=621345396 instance=ExtResource("13_hk2jt")]
@@ -620,10 +637,5 @@ scale = Vector2(2, 2)
 texture = ExtResource("12_14nfc")
 
 [node name="PhonePowerUp" parent="." unique_id=1813305990 instance=ExtResource("15_vtd0g")]
-position = Vector2(2263, -21)
-
-[node name="Shoe box" parent="." unique_id=1316782146 instance=ExtResource("17_5gowt")]
-position = Vector2(7471, 409)
-
-[node name="Shoe box2" parent="." unique_id=424348150 instance=ExtResource("17_5gowt")]
-position = Vector2(7471, 275)
+position = Vector2(2551, -460)
+scale = Vector2(0.2, 0.2)
