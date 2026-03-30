@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://b5kqvxcdbeep1"]
 
 [ext_resource type="Texture2D" uid="uid://da6cqbgp2mo0f" path="res://assets/Floor.png" id="1_3hls8"]
+[ext_resource type="Script" uid="uid://dv0jpke08335n" path="res://scenes/Levels/level_1.gd" id="1_ac15f"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_hbghi"]
 texture = ExtResource("1_3hls8")
@@ -13,6 +14,7 @@ physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_hbghi")
 
 [node name="Level-1" type="Node2D" unique_id=1662869028]
+script = ExtResource("1_ac15f")
 
 [node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=1925879137]
 physics_interpolation_mode = 1

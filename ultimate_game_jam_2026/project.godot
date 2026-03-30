@@ -13,12 +13,17 @@ config_version=5
 config/name="Ultimate Game Jam 2026"
 run/main_scene="uid://dd70w6fnyxcp6"
 config/features=PackedStringArray("4.6", "Forward Plus")
+boot_splash/image="uid://7j1m228267d3"
 config/icon="res://icon.svg"
 
 [display]
 
 window/size/viewport_width=1280
 window/size/viewport_height=720
+
+[gui]
+
+theme/custom_font="uid://dbug4t4j7u65h"
 
 [input]
 
