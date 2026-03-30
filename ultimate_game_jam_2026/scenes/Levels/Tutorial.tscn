@@ -99,12 +99,12 @@ position = Vector2(6145.0005, -893.00006)
 scale = Vector2(2.5, 2.5)
 
 [node name="Red Book" parent="." unique_id=583707597 instance=ExtResource("9_dswxo")]
-position = Vector2(5122, -836)
+position = Vector2(5144, -836)
 rotation = 1.5707964
 scale = Vector2(2, 2)
 
 [node name="Red Book2" parent="." unique_id=731843460 instance=ExtResource("9_dswxo")]
-position = Vector2(5141, -873)
+position = Vector2(5163, -873)
 rotation = 1.5707964
 scale = Vector2(2, 2)
 
@@ -198,19 +198,19 @@ position = Vector2(5298, -696)
 scale = Vector2(2, 2)
 
 [node name="Red Book6" parent="." unique_id=1157543954 instance=ExtResource("9_dswxo")]
-position = Vector2(5475, -357)
+position = Vector2(5465, -357)
 scale = Vector2(2, 2)
 
 [node name="Red Book7" parent="." unique_id=1860601917 instance=ExtResource("9_dswxo")]
-position = Vector2(5476, -554)
+position = Vector2(5466, -554)
 scale = Vector2(2, 2)
 
 [node name="Red Book8" parent="." unique_id=2122137950 instance=ExtResource("9_dswxo")]
-position = Vector2(5562, -245)
+position = Vector2(5542, -248)
 scale = Vector2(2, 2)
 
 [node name="Red Book9" parent="." unique_id=1610972718 instance=ExtResource("9_dswxo")]
-position = Vector2(5561, -449)
+position = Vector2(5541, -452)
 scale = Vector2(2, 2)
 
 [node name="Red Book10" parent="." unique_id=28581478 instance=ExtResource("9_dswxo")]
@@ -222,15 +222,15 @@ position = Vector2(5383, -432)
 scale = Vector2(2, 2)
 
 [node name="Red Book12" parent="." unique_id=1445262346 instance=ExtResource("9_dswxo")]
-position = Vector2(5650, -360)
+position = Vector2(5619, -363)
 scale = Vector2(2, 2)
 
 [node name="Red Book13" parent="." unique_id=308023653 instance=ExtResource("9_dswxo")]
-position = Vector2(5730, -231)
+position = Vector2(5699, -234)
 scale = Vector2(2, 2)
 
 [node name="Red Book14" parent="." unique_id=1327577518 instance=ExtResource("9_dswxo")]
-position = Vector2(5650, -161)
+position = Vector2(5619, -164)
 scale = Vector2(2, 2)
 
 [node name="Red Book15" parent="." unique_id=2021132901 instance=ExtResource("9_dswxo")]
@@ -238,7 +238,7 @@ position = Vector2(5383, -231)
 scale = Vector2(2, 2)
 
 [node name="Red Book16" parent="." unique_id=982111162 instance=ExtResource("9_dswxo")]
-position = Vector2(5477, -160)
+position = Vector2(5467, -160)
 scale = Vector2(2, 2)
 
 [node name="Red Book17" parent="." unique_id=613858166 instance=ExtResource("9_dswxo")]
@@ -246,5 +246,5 @@ position = Vector2(5297, -143)
 scale = Vector2(2, 2)
 
 [node name="Red Book18" parent="." unique_id=1489323340 instance=ExtResource("9_dswxo")]
-position = Vector2(5822, -163)
+position = Vector2(5769, -166)
 scale = Vector2(2, 2)

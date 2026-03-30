@@ -1,0 +1,50 @@
+[gd_scene format=3 uid="uid://bbvliiobp5oli"]
+
+[ext_resource type="Script" uid="uid://ciwlrfihw2rr6" path="res://scenes/ending_screen.gd" id="1_4vp0n"]
+[ext_resource type="Theme" uid="uid://lh5rum8x22ba" path="res://Resources/Ampy_theme.tres" id="1_61pod"]
+
+[node name="Ending_screen" type="Control" unique_id=1868307338]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_4vp0n")
+change_scene = "uid://dc0gbfeav5cmc"
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=161180445]
+
+[node name="CenterContainer" type="CenterContainer" parent="CanvasLayer" unique_id=580759472]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/CenterContainer" unique_id=1511612873]
+layout_mode = 2
+alignment = 1
+
+[node name="Ampy" type="Label" parent="CanvasLayer/CenterContainer/VBoxContainer" unique_id=1517396831]
+layout_mode = 2
+theme_override_font_sizes/font_size = 64
+text = "Ampy's now connected !"
+horizontal_alignment = 1
+
+[node name="THX" type="Label" parent="CanvasLayer/CenterContainer/VBoxContainer" unique_id=785446530]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "Thanks for playing"
+horizontal_alignment = 1
+
+[node name="LeaveBtn" type="Button" parent="CanvasLayer/CenterContainer/VBoxContainer" unique_id=2020357432]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme = ExtResource("1_61pod")
+theme_override_colors/font_hover_color = Color(0.28118682, 0.28118688, 0.28118682, 1)
+theme_override_font_sizes/font_size = 36
+text = "Main Menu"
+
+[connection signal="pressed" from="CanvasLayer/CenterContainer/VBoxContainer/LeaveBtn" to="." method="_on_leave_btn_pressed"]
