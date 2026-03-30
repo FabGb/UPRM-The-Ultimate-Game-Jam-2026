@@ -1,0 +1,35 @@
+[gd_resource type="Theme" format=3 uid="uid://lh5rum8x22ba"]
+
+[ext_resource type="Texture2D" uid="uid://bcm3jnkcbfedm" path="res://Resources/container_hover.png" id="1_5sddu"]
+[ext_resource type="FontFile" uid="uid://dbug4t4j7u65h" path="res://Resources/Jersey25-Regular.ttf" id="1_67ups"]
+[ext_resource type="Texture2D" uid="uid://dnvynbole5kk1" path="res://Resources/container.png" id="2_vmws5"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_myrmq"]
+texture = ExtResource("1_5sddu")
+texture_margin_left = 50.0
+texture_margin_top = 50.0
+texture_margin_right = 50.0
+texture_margin_bottom = 50.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_vmws5"]
+texture = ExtResource("2_vmws5")
+texture_margin_left = 50.0
+texture_margin_top = 50.0
+texture_margin_right = 50.0
+texture_margin_bottom = 50.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_5sddu"]
+texture = ExtResource("2_vmws5")
+texture_margin_left = 50.0
+texture_margin_top = 50.0
+texture_margin_right = 50.0
+texture_margin_bottom = 50.0
+
+[resource]
+Button/colors/font_hover_color = Color(0.59717596, 0.597176, 0.5971771, 1)
+Button/font_sizes/font_size = 64
+Button/styles/hover = SubResource("StyleBoxTexture_myrmq")
+Button/styles/normal = SubResource("StyleBoxTexture_vmws5")
+Label/font_sizes/font_size = 256
+Label/fonts/font = ExtResource("1_67ups")
+PanelContainer/styles/panel = SubResource("StyleBoxTexture_5sddu")
