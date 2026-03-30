@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://drnc78s15igyk"]
+
+[ext_resource type="Texture2D" uid="uid://c0tfpxddf8hx7" path="res://assets/Objects/tall_vase.PNG" id="1_okk6c"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_bkkxq"]
+radius = 58.034473
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_okk6c"]
+size = Vector2(43, 20)
+
+[node name="TallVase" type="StaticBody2D" unique_id=364686908]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1946608316]
+texture = ExtResource("1_okk6c")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=849199502]
+position = Vector2(0, -10)
+rotation = -6.2831855
+shape = SubResource("CircleShape2D_bkkxq")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="." unique_id=165408085]
+position = Vector2(-0.5, -65)
+shape = SubResource("RectangleShape2D_okk6c")
