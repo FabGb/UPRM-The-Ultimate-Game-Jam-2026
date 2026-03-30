@@ -19,7 +19,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_48ign")
-change_scene = "uid://bpb0bvq75wy3d"
+change_scene = "uid://dd70w6fnyxcp6"
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1982343426]
 
